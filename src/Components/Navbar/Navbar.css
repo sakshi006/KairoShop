@@ -29,6 +29,14 @@
   .navbar .top-links .fa-shopping-cart:hover{
     color: var(--blue-text);
   }
+
+  .nav-cart:hover{
+    color: var(--blue-text);
+  }
+
+  .nav-heart:hover{
+    color: var(--fav);
+  }
   
   /* nav btn ends */
   .logo{

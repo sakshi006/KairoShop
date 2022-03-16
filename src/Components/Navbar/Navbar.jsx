@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { BsSearch,BsFillCartFill,BsFillSuitHeartFill } from "react-icons/bs";
+
 import "./Navbar.css";
 
 import { Link } from "react-router-dom";
@@ -11,7 +13,8 @@ const Navbar = () => {
         <Link to="/">KairoShop</Link>
       </h2>
       <div className="input-container">
-        <i className="fas fa-search icon"></i>
+        
+        <BsSearch  className="fas fa-search icon" />
         <input
           className="input-field"
           type="text"
@@ -26,11 +29,12 @@ const Navbar = () => {
         </Link>
         <Link to="/wishlist" className="child-ecom">
           <span className="badgeecom one">10</span>
-          <i className="fas fa-heart"></i>
+          <BsFillSuitHeartFill className="nav-heart"/>
         </Link>
         <Link to="/cart" className="child-ecom">
         <span className="badgeecom two">2</span>
-          <i className="fas fa-shopping-cart"></i>
+          <BsFillCartFill className="nav-cart" />
+    
         </Link>
 
      
