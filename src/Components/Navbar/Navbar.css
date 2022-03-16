@@ -89,7 +89,7 @@
   .btn{
       padding: 0.4rem 1.2rem;
       cursor: pointer;
-      border-radius: 1rem;
+      border-radius: 16px;
       background-color: var(--buttons);
       border: none;
       font-weight: bold;
@@ -102,7 +102,7 @@
   
   .input-field{
       padding: 0.6rem 1.8rem;
-      border-radius: 0.8rem;
+      border-radius: 12.8px;
       width: 100%;
       border: none;
       outline: none;
