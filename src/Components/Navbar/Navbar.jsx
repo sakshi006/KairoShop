@@ -19,7 +19,7 @@ const Navbar = () => {
           type="text"
           value={searchValue}
           placeholder="Search for something..."
-          onChange={(e) => setSearchValue(e.target.vale)}
+          onChange={(e)=>setSearchValue(e.target.value)}
         />
       </div>
       <div className="top-links">
