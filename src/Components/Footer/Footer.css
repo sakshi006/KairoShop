@@ -1,0 +1,25 @@
+.quiz-foot {
+    background-color: var(--secondary);
+    padding: 0.5rem;
+    margin-top: 2rem;
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+  }
+  
+  .social-media-links {
+    display: inline-flex;
+  }
+  
+  .list-item-inline {
+    list-style-type: none;
+    margin: 0rem 0.5rem;
+    text-align: center;
+  }
+  
+  .social-media-links a {
+    text-decoration: none;
+    color: var(--primary);
+  }

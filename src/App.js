@@ -1,7 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Navbar from "./Components/Navbar/Navbar";
-import  {Home, Login, WishList, Cart}  from "./Pages"
+import { Footer } from "./Components/Footer/Footer";
+import  {Home, Login, WishList, Cart, ProductList}  from "./Pages"
 
 function App() {
   return (
@@ -12,7 +13,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/wishlist" element={<WishList />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/productlist" element={<ProductList />} />
       </Routes>
+      <Footer/>
     </div>
   );
 }
