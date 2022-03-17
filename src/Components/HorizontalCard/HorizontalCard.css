@@ -1,0 +1,21 @@
+.cardcom {
+  margin: 1rem 0rem;
+}
+
+.product-detail {
+  padding: 0.3rem;
+}
+
+.footer {
+  width: 12ch;
+  line-height: 1rem;
+}
+
+.horizontal {
+  max-width: fit-content;
+}
+
+.horizontal .footer {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+}
