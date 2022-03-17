@@ -5,29 +5,6 @@
 }
 
 
-.card-badge {
-  position: relative;
-  opacity: 0.8;
-  width: 10rem;
-  color: var(--font);
-}
-
-.text-over {
-  position: absolute;
-  top: 4.5rem;
-  font-weight: bold;
-  background-color: var(--secondary);
-  width: 100%;
-}
-
-.text-over:hover {
-  box-shadow: 2px 1px 8px 1px var(--primary);
-  text-shadow: 2px 2px 2px var(--primary);
-  cursor: pointer;
-}
-
-/* top display ends */
-
 /* main-slider */
 
 .hero-img {
@@ -41,6 +18,10 @@
 .main-slider {
   align-items: center;
   position: relative;
+}
+.main-slider-img {
+  margin: 0rem;
+  margin-top: 1rem;
 }
 
 .hero-text{
@@ -86,10 +67,6 @@
   transform: translate(-50%, -50%);
 }
 
-.main-slider-img {
-  margin: 0rem;
-  margin-top: 1rem;
-}
 
 /* main slider ends */
 

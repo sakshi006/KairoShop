@@ -21,14 +21,6 @@
   .navbar .top-links a{
     color: var(--font);
   }
-  
-  .navbar .top-links .fa-heart:hover{
-    color: var(--fav);
-  }
-  
-  .navbar .top-links .fa-shopping-cart:hover{
-    color: var(--blue-text);
-  }
 
   .nav-cart:hover{
     color: var(--blue-text);
@@ -80,10 +72,6 @@
     padding: 0.01rem 0.35rem;
   }
   
-  i:hover{
-      text-shadow: 1px 1px 4px  var(--primary);
-      cursor: pointer;
-  }
   
   /* nav btn */
   .btn{
