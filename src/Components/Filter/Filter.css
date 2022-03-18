@@ -34,3 +34,16 @@
   .filter-form input:hover,label:hover{
       cursor: pointer;
   }
+
+
+  /* price slider */
+
+  #slider{
+    width: 100%;
+  }
+
+  .range-marker{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }

@@ -4,7 +4,15 @@ export const categoryFilter = (products, categoryFilter) => {
   if (!Fiction && !NonFiction && !SelfHelp) return products; //if no category selected
 
   if (Fiction) { // if fiction and self help selected
-    if(SelfHelp){
+    if(SelfHelp)
+    {
+       if(NonFiction)
+       return products.filter(
+        (item) =>
+          item.category === "Non Fiction" ||
+          item.category === "Fiction" ||
+          item.category === "Self Help"
+      );
         return products.filter(
             (item) =>
               item.category === "Fiction" || item.category === "Self Help"
@@ -28,7 +36,7 @@ export const categoryFilter = (products, categoryFilter) => {
       return products.filter((item) => item.category === "Fiction");
     }
   }
-
+// non fiction
   if (NonFiction) {
     if(SelfHelp){
         return products.filter(
@@ -54,7 +62,14 @@ export const categoryFilter = (products, categoryFilter) => {
       return products.filter((item) => item.category === "Non Fiction");
     }
   }
+// self help
   if (SelfHelp) {
+      if(NonFiction){
+        return products.filter(
+            (item) =>
+              item.category === "Non Fiction" || item.category === "Self Help"
+          );
+      }
     if (Fiction) {
       if (NonFiction)
         return products.filter(
@@ -68,6 +83,9 @@ export const categoryFilter = (products, categoryFilter) => {
           (item) => item.category === "Self Help" || item.category === "Fiction"
         );
     } else {
+        if(NonFiction) return products.filter(
+            (item) => item.category === "Self Help" || item.category === "Non Fiction"
+          );
       return products.filter((item) => item.category === "Self Help");
     }
   }

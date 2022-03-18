@@ -25,7 +25,12 @@ export const filterReducer = (state, action) => {
         ...state,
         category: { ...state.category, SelfHelp: !state.category.SelfHelp },
       };
-    
+    case "PRICE":
+      return {
+        ...state,
+        price: action.price_value,
+      };
+
     default:
       return state;
   }

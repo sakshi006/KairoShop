@@ -10,7 +10,7 @@ const FilterProvider = ({ children }) => {
     sortBy: "",
     category: { Fiction: false, NonFiction: false, SelfHelp: false},
     isBestSeller: "",
-    price: 100,
+    price: 1200,
     rating: "",
   });
 

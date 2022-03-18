@@ -7,6 +7,7 @@ const Filter = () => {
     state: {
       sortBy,
       category: { Fiction, NonFiction, SelfHelp },
+      price,
     },
     dispatch,
   } = useFilter();
@@ -98,7 +99,7 @@ const Filter = () => {
                 name="fiction"
                 value="fiction"
                 checked={Fiction}
-                onChange={()=>dispatch({type:"FICTION"})}
+                onChange={() => dispatch({ type: "FICTION" })}
               />
               Fiction
             </label>
@@ -111,7 +112,7 @@ const Filter = () => {
                 name="nonfiction"
                 value="nonfiction"
                 checked={NonFiction}
-                onChange={()=>dispatch({type:"NON_FICTION"})}
+                onChange={() => dispatch({ type: "NON_FICTION" })}
               />
               Non Fiction
             </label>
@@ -124,44 +125,36 @@ const Filter = () => {
                 name="selfhelp"
                 value="selfhelp"
                 checked={SelfHelp}
-                onChange={()=>dispatch({type:"SELF_HELP"})}
+                onChange={() => dispatch({ type: "SELF_HELP" })}
               />
               Self Help
             </label>
           </div>
-         
         </div>
-
-        {/* <div className="filter-category --price">
-          <label htmlFor="price">
-            <h3 className="filter-head">Price</h3>{" "}
-          </label>
+        {/* FILTER BY PRICE */}
+        <div className="filter-category --price">
+          <h3 className="filter-head">Price</h3>
+      
           <input
+            id="slider"
             type="range"
-            name="price"
-            id="price"
-            min="0"
-            max="500000"
-            value="50"
+            list="tickmarks"
+            step="350"
+            value={price}
+            min="50"
+            max="1100"
+            onChange={(e) =>
+              dispatch({ type: "PRICE", price_value: e.target.value })
+            }
           />
+          <datalist id="tickmarks">
+            <option value="50" label="0"></option>
+            <option value="400" label="400"></option>
+            <option value="750" label="750"></option>
+            <option value="1100" label="1100"></option>
+          </datalist>
+          <div className="range-marker"><span>50</span><span>350</span><span>750</span><span>1100</span></div>
         </div>
-        
-        <div className="filter-category --Rating">
-          <h3 className="filter-head">Rating</h3>
-          <input type="radio" id="four" name="rating" value="4 Stars & above" />
-          <label htmlFor="four">4 Stars & above</label>
-          <input
-            type="radio"
-            id="three"
-            name="rating"
-            value="3 Stars & above"
-          />
-          <label htmlFor="three">3 Stars & above</label>
-          <input type="radio" id="two" name="rating" value="2 Stars & above" />
-          <label htmlFor="two">2 Stars & above</label>
-          <input type="radio" id="one" name="rating" value="1 Stars & above" />
-          <label htmlFor="one">1 Stars & above</label>
-        </div> */}
       </form>
     </div>
   );

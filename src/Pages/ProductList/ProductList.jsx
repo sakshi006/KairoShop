@@ -7,15 +7,17 @@ import { useFilter } from "../../context/filterContext";
 
 import { sortProduct } from "../../Utils/Sort";
 import { categoryFilter } from "../../Utils/Category";
+import { PriceFilter } from "../../Utils/PriceFilter";
 
 export const ProductList = () => {
   const {
-    state: { sortBy, category },
+    state: { sortBy, category, price },
   } = useFilter();
 
   
   const sortedProducts = sortProduct(products, sortBy);
   const categoryFilteredProducts = categoryFilter(sortedProducts,category)
+  const priceFilteredProducts = PriceFilter(categoryFilteredProducts,price)
 
   return (
     <div className="  main-content-ecom">
@@ -26,7 +28,7 @@ export const ProductList = () => {
             Showing All Products <small>(Showing 13 products)</small>
           </div>
           <div className="product-list">
-            {categoryFilteredProducts.map((item) => {
+            {priceFilteredProducts.map((item) => {
               return <ProductCard key={item._id} item={item} />;
             })}
           </div>

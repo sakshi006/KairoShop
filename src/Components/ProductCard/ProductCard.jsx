@@ -16,6 +16,10 @@ const ProductCard = ({
     discount
   },
 }) => {
+
+  const calcPercentage = (price, originalPrice) =>
+  Math.floor(Math.abs((price / originalPrice) * 100 - 100));
+
   return (
     <div className="grid-item">
       <div className="card-ecom card-badge">
@@ -32,7 +36,7 @@ const ProductCard = ({
             <p className="price">
               Rs.{price}
               <span className="old-price">Rs.{originalPrice}</span>
-              <span className="discount">{discount}</span>
+              <span className="discount"> {calcPercentage(price, originalPrice)}% </span>
             </p>
               <span className={rating>3.4?"green-rate rating":"red-rate rating"}>{rating}<AiTwotoneStar/></span>
           </div>
