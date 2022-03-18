@@ -1,6 +1,6 @@
 import React from "react";
 import "./ProductList.css";
-import { products } from "../../Assets/Data";
+import {products} from "../../Assets/Data"
 import ProductCard from "../../Components/ProductCard/ProductCard";
 import Filter from "../../Components/Filter/Filter";
 import { useFilter } from "../../context/filterContext";
