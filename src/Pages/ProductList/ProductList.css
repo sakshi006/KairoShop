@@ -6,42 +6,7 @@
     grid-template-columns: 20% 80%;
   }
   
-  /* FILTERS BAR */
-  
-  .filters {
-    padding: 1rem;
-  }
-  
-  .filter-heading {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 2px solid var(--primary);
-  }
-  
-  .clear {
-    text-decoration: underline;
-  }
-  
-  .filter-head {
-    margin: 1rem 0rem;
-  }
-  
-  .filter-category {
-    text-align: left;
-  }
-  
-  .filter-category:hover{
-      cursor: pointer;
-  }
-  
-  .filter-form {
-    margin: 1rem;
-  }
-  
-  .filter-form input:hover,label:hover{
-      cursor: pointer;
-  }
+ 
   
   /* products page */
   

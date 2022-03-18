@@ -20,7 +20,6 @@ const ProductCard = ({
       <div class="card-ecom card-badge">
         {isBestSeller ? <span class="update-badge">BestSeller</span> : null}
         <span class="fav">
-          {" "}
           <i class="fas fa-heart"></i>
         </span>
         <img class="product-card-image" src={img} alt={name} />

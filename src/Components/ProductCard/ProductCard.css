@@ -36,15 +36,7 @@
   .fav:hover{
       color: var(--fav);
   }
-
-/*   
-.footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 0.3rem;
-  }
-   */
+  
   span {
     padding: 0.3rem;
     border: 0.5rem;
