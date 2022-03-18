@@ -9,7 +9,23 @@ export const filterReducer = (state, action) => {
     case "NAMEZ-A":
       return { ...state, sortBy: "NAMEZ-A" };
     case "RATING":
-        return { ...state, sortBy: "RATING" };
+      return { ...state, sortBy: "RATING" };
+    case "FICTION":
+      return {
+        ...state,
+        category: { ...state.category, Fiction: !state.category.Fiction },
+      };
+    case "NON_FICTION":
+      return {
+        ...state,
+        category: { ...state.category, NonFiction: !state.category.NonFiction },
+      };
+    case "SELF_HELP":
+      return {
+        ...state,
+        category: { ...state.category, SelfHelp: !state.category.SelfHelp },
+      };
+    
     default:
       return state;
   }
