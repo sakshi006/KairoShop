@@ -17,7 +17,7 @@ const ProductCard = ({
   console.log(author);
   return (
     <div className="grid-item">
-      <div class="card card-badge">
+      <div class="card-ecom card-badge">
         {isBestSeller ? <span class="update-badge">BestSeller</span> : null}
         <span class="fav">
           {" "}

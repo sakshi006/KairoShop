@@ -6,28 +6,7 @@ import ProductCard from '../../Components/ProductCard/ProductCard'
 export const ProductList = () => {
   return (
     <div class="  main-content-ecom">
-    <nav class="navbar">
-      <h2 class="logo"><a href="../Home.html">KairoShop</a></h2>
-      <div class="input-container">
-        <i class="fas fa-search icon"></i>
-        <input
-          class="input-field"
-          type="text"
-          placeholder="Search for something..."
-        />
-      </div>
-      <div class="top-links"> <a href="../Authentication/Login.html"><button class="btn">Login</button></a>
-        <a href="../Wishlist/Wishlist.html" class="child-ecom">
-          <span class="badgeecom one">10</span>
-          <i class="fas fa-heart"></i>
-        </a>
-        <a href="../Cart/Cart.html" class="child-ecom">
-          <span class="badgeecom two">2</span>
-          <i class="fas fa-shopping-cart"></i>
-        </a>
-      </div>
-    </nav>
-
+   
     <div class=" product-grid">
       <div class="filters">
         <div class="filter-heading">
