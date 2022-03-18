@@ -15,7 +15,7 @@ const Filter = () => {
     <div className="filters">
       <div className="filter-heading">
         <h3 className="filter-head main">Filters</h3>
-        <p className="filter-head clear">Clear</p>
+        <p onClick={()=>dispatch({type:"CLEAR"})} className="filter-head clear">Clear All</p>
       </div>
       <form className="filter-form">
         {/* SORT BY PRICE AND NAME  */}
@@ -31,7 +31,7 @@ const Filter = () => {
                 checked={sortBy === "LOW_TO_HIGH"}
                 onChange={() => dispatch({ type: "LOW_TO_HIGH" })}
               />
-              Low To High
+              Price (Low-High)
             </label>
           </div>
           <div>
@@ -44,7 +44,7 @@ const Filter = () => {
                 checked={sortBy === "HIGH_TO_LOW"}
                 onChange={() => dispatch({ type: "HIGH_TO_LOW" })}
               />
-              High To Low
+             Price (High-Low)
             </label>
           </div>
           <div>
@@ -83,7 +83,7 @@ const Filter = () => {
                 checked={sortBy === "RATING"}
                 onChange={() => dispatch({ type: "RATING" })}
               />
-              Rating (High-Low)
+               Rating (High-Low)
             </label>
           </div>
         </div>

@@ -30,6 +30,14 @@ export const filterReducer = (state, action) => {
         ...state,
         price: action.price_value,
       };
+    case "CLEAR":
+        return {
+            sortBy: "",
+            category: { Fiction: false, NonFiction: false, SelfHelp: false},
+            isBestSeller: "",
+            price: 1200,
+            rating: "",
+        }
 
     default:
       return state;
