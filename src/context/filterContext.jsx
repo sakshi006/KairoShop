@@ -11,7 +11,7 @@ const FilterProvider = ({ children }) => {
     category: { Fiction: false, NonFiction: false, SelfHelp: false},
     isBestSeller: "",
     price: 1200,
-    rating: "",
+    BestSeller: false,
   });
 
   return (

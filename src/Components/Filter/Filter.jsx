@@ -8,6 +8,7 @@ const Filter = () => {
       sortBy,
       category: { Fiction, NonFiction, SelfHelp },
       price,
+      BestSeller
     },
     dispatch,
   } = useFilter();
@@ -84,6 +85,23 @@ const Filter = () => {
                 onChange={() => dispatch({ type: "RATING" })}
               />
                Rating (High-Low)
+            </label>
+          </div>
+        </div>
+
+        <div className="filter-category --bestSeller">
+          <h3 className="filter-head">Best Sellers</h3>
+          <div>
+            <label htmlFor="bestseller">
+              <input
+                type="checkbox"
+                id="bestseller"
+                name="bestseller"
+                value="bestseller"
+                checked={BestSeller}
+                onChange={() => dispatch({ type: "BEST_SELLER" })}
+              />
+              Best Seller
             </label>
           </div>
         </div>

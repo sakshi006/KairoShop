@@ -8,16 +8,18 @@ import { useFilter } from "../../context/filterContext";
 import { sortProduct } from "../../Utils/Sort";
 import { categoryFilter } from "../../Utils/Category";
 import { PriceFilter } from "../../Utils/PriceFilter";
+import { BestSellerFunc } from "../../Utils/BestSeller";
 
 export const ProductList = () => {
   const {
-    state: { sortBy, category, price },
+    state: { sortBy, category, price, BestSeller  },
   } = useFilter();
 
   
   const sortedProducts = sortProduct(products, sortBy);
   const categoryFilteredProducts = categoryFilter(sortedProducts,category)
-  const priceFilteredProducts = PriceFilter(categoryFilteredProducts,price)
+  const bookBestSeller = BestSellerFunc(categoryFilteredProducts, BestSeller)
+  const priceFilteredProducts = PriceFilter(bookBestSeller,price)
 
   return (
     <div className="  main-content-ecom">

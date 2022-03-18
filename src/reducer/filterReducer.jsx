@@ -10,6 +10,8 @@ export const filterReducer = (state, action) => {
       return { ...state, sortBy: "NAMEZ-A" };
     case "RATING":
       return { ...state, sortBy: "RATING" };
+    case "BEST_SELLER":
+       return {...state, BestSeller : !state.BestSeller}
     case "FICTION":
       return {
         ...state,
