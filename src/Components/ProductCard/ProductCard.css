@@ -1,0 +1,90 @@
+  
+  .card-ecom {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    width: 14rem;
+    box-shadow: 0.3rem 0.5rem 0.6rem 0.2rem grey;
+    position: relative;
+  }
+  
+  .card-ecom:hover {
+    box-shadow: 0.3rem 0.5rem 0.6rem 0.2rem rgb(98, 98, 98);
+  }
+
+  .card-badge > .update-badge {
+    position: absolute;
+    background-color: var(--primary);
+    font-size: 0.8rem;
+    font-weight: bold;
+    box-shadow: 0.35rem 0.25rem 0.5rem 0.1rem;
+    top: 1.1rem;
+  }
+
+  .fav{
+    position: absolute;
+    background-color: var(--secondary);
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.2rem 0.4rem;
+    top: 1rem;
+    left: 12rem;
+    color: var(--white);
+  }
+
+  .fav:hover{
+      color: var(--fav);
+  }
+  
+  span {
+    padding: 0.3rem;
+    border: 0.5rem;
+    cursor: pointer;
+    color: black;
+  }
+  
+  .product-card-image{
+    height: 16rem;
+}
+  
+.product-detail .footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.green-rate{
+  background-color: var(--primary);
+}
+.red-rate{
+  background-color: var(--red);
+}
+  
+  .price {
+    font-size: medium;
+    padding-top: 0.5rem;
+  }
+  .old-price {
+    text-decoration: line-through;
+    color: var(--primary);
+  }
+  
+  .discount {
+    color: var(--primary);
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+  
+  .card-badge{
+    margin: 0rem auto;
+    padding: 0.5rem;
+  }
+
+  .cart-btn{
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 0rem;
+    margin-top: 0.3rem;
+}
+  
