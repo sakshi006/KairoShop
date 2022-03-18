@@ -48,10 +48,19 @@
     height: 16rem;
 }
   
-  .rating {
-    background-color: var(--primary);
-    font-size: x-small;
-  }
+.product-detail .footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.green-rate{
+  background-color: var(--primary);
+}
+.red-rate{
+  background-color: var(--red);
+}
   
   .price {
     font-size: medium;

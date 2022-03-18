@@ -1,6 +1,8 @@
 import React from "react";
 import "./ProductCard.css";
 
+import { AiTwotoneStar } from "react-icons/ai";
+
 const ProductCard = ({
   item: {
     author,
@@ -14,27 +16,27 @@ const ProductCard = ({
     discount
   },
 }) => {
-  console.log(author);
   return (
     <div className="grid-item">
-      <div class="card-ecom card-badge">
-        {isBestSeller ? <span class="update-badge">BestSeller</span> : null}
-        <span class="fav">
-          <i class="fas fa-heart"></i>
+      <div className="card-ecom card-badge">
+        {isBestSeller ? <span className="update-badge">BestSeller</span> : null}
+        <span className="fav">
+          <i className="fas fa-heart"></i>
         </span>
-        <img class="product-card-image" src={img} alt={name} />
-        <div class="product-detail">
+        <img className="product-card-image" src={img} alt={name} />
+        <div className="product-detail">
           <strong>{name}</strong>
           <p>{author}</p>
 
-          <div class="footer">
-            <p class="price">
+          <div className="footer">
+            <p className="price">
               Rs.{price}
-              <span class="old-price">Rs.{originalPrice}</span>
-              <span class="discount">{discount}</span>
+              <span className="old-price">Rs.{originalPrice}</span>
+              <span className="discount">{discount}</span>
             </p>
+              <span className={rating>3.4?"green-rate rating":"red-rate rating"}>{rating}<AiTwotoneStar/></span>
           </div>
-          <button class="btn cart-btn">Add to Cart</button>
+          <button className="btn cart-btn">Add to Cart</button>
         </div>
       </div>
     </div>

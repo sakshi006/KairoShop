@@ -1,25 +1,33 @@
-import React from 'react'
-import "./ProductList.css"
-import {products} from "../../Assets/Data"
-import ProductCard from '../../Components/ProductCard/ProductCard'
-import Filter from '../../Components/Filter/Filter'
+import React from "react";
+import "./ProductList.css";
+import { products } from "../../Assets/Data";
+import ProductCard from "../../Components/ProductCard/ProductCard";
+import Filter from "../../Components/Filter/Filter";
+import { useFilter } from "../../context/filterContext";
+
+import { sortProduct } from "../../Utils/Sort";
 
 export const ProductList = () => {
+  const {
+    state: { sortBy },
+  } = useFilter();
+
+  const sortedProducts = sortProduct(products, sortBy);
   return (
-    <div class="  main-content-ecom">
-   
-    <div class=" product-grid">
-      <Filter/>
-      <div class="products-page">
-        <div class="products-head">Showing All Products <small>(Showing 13 products)</small></div>
-        <div class="product-list">
-          {products.map((item)=> {
-            console.log("item in producklist",item)
-            return(<ProductCard item={item} />)})}
-       
+    <div className="  main-content-ecom">
+      <div className=" product-grid">
+        <Filter />
+        <div className="products-page">
+          <div className="products-head">
+            Showing All Products <small>(Showing 13 products)</small>
+          </div>
+          <div className="product-list">
+            {sortedProducts.map((item) => {
+              return <ProductCard key={item._id} item={item} />;
+            })}
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  )
-}
+  );
+};
