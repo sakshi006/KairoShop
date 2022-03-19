@@ -41,7 +41,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    img: "https://rukminim1.flixcart.com/image/612/612/kufuikw0/book/x/s/w/atomic-habits-original-imag7kbzg2fu8rjv.jpeg?q=70",
+    img: "https://d3i5mgdwi2ze58.cloudfront.net/hwi2qqngyicqz7s7ps4x4k1ei14k",
     name: "Atomic Habits",
     author: "James Clear",
     price: 390,
@@ -54,7 +54,7 @@ export const products = [
 
   {
     _id: uuid(),
-    img: "https://rukminim1.flixcart.com/image/612/612/kufuikw0/book/0/6/q/ikigai-original-imag7kc7q5ugy2km.jpeg?q=70",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTvrBNWlYmmsa_2M3BaJdurD9lve0SdNLAIA&usqp=CAU",
     name: "IKIGAI",
     author: "I dont Know",
     price: 600,
