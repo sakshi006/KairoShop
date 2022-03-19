@@ -4,11 +4,8 @@ import {products} from "../../Assets/Data"
 import ProductCard from "../../Components/ProductCard/ProductCard";
 import Filter from "../../Components/Filter/Filter";
 import { useFilter } from "../../context/filterContext";
+import {sortProduct,categoryFilter,PriceFilter,BestSellerFunc} from "../../Utils"
 
-import { sortProduct } from "../../Utils/Sort";
-import { categoryFilter } from "../../Utils/Category";
-import { PriceFilter } from "../../Utils/PriceFilter";
-import { BestSellerFunc } from "../../Utils/BestSeller";
 
 export const ProductList = () => {
   const {

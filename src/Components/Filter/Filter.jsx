@@ -20,7 +20,7 @@ const Filter = () => {
       </div>
       <form className="filter-form">
         {/* SORT BY PRICE AND NAME  */}
-        <div className="filter-category --Sortby">
+        <div className="filter-category Sortby">
           <h3 className="filter-head">Sort By</h3>
           <div>
             <label htmlFor="lowtohigh">
@@ -89,7 +89,8 @@ const Filter = () => {
           </div>
         </div>
 
-        <div className="filter-category --bestSeller">
+{/* WETHER IT IS BESTSELLER OR NOT */}
+        <div className="filter-category bestSeller">
           <h3 className="filter-head">Best Sellers</h3>
           <div>
             <label htmlFor="bestseller">
@@ -107,7 +108,7 @@ const Filter = () => {
         </div>
 
         {/* SORT BY CATEGORIES */}
-        <div className="filter-category --category">
+        <div className="filter-category category">
           <h3 className="filter-head">Category</h3>
           <div>
             <label htmlFor="fiction">
@@ -150,7 +151,7 @@ const Filter = () => {
           </div>
         </div>
         {/* FILTER BY PRICE */}
-        <div className="filter-category --price">
+        <div className="filter-category price">
           <h3 className="filter-head">Price</h3>
       
           <input
