@@ -29,11 +29,9 @@
   
   .filter-category {
     text-align: left;
+    cursor: pointer;
   }
   
-  .filter-category:hover{
-      cursor: pointer;
-  }
   
   .filter-form {
     margin: 1rem;
