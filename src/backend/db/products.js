@@ -5,7 +5,7 @@ import { v4 as uuid } from "uuid";
  * You can add products of your wish with different attributes
  * */
 
-export const products =[
+export const products =[ 
   {
     "_id": "df2da037-88d3-4757-9167-6e79139a0767",
     "img": "https://images-na.ssl-images-amazon.com/images/I/41y2KJ+kDLL._SY344_BO1,204,203,200_.jpg",

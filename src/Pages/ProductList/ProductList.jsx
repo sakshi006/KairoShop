@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ProductList.css";
 import ProductCard from "../../Components/ProductCard/ProductCard";
 import Filter from "../../Components/Filter/Filter";
@@ -15,7 +15,7 @@ export const ProductList = () => {
   const {
     state: { sortBy, category, price, BestSeller },
   } = useFilter();
-  const { products } = useProductContext();
+  const { loader, products } = useProductContext();
 
   // console.log(products.length)
 
@@ -35,8 +35,9 @@ export const ProductList = () => {
 
   return (
     <div className="  main-content-ecom">
-      <div className=" product-grid">
+     {loader?<h1 style={{textAlign:"center"}}>Fetching Products...</h1>: <div className=" product-grid">
         <Filter />
+
         <div className="products-page">
           <div className="products-head">
             Showing All Products{" "}
@@ -48,7 +49,7 @@ export const ProductList = () => {
             })}
           </div>
         </div>
-      </div>
+      </div>}
     </div>
   );
 };
