@@ -88,3 +88,6 @@
     margin-top: 0.3rem;
 }
   
+.cart-remove{
+  background-color: var(--secondary);
+}

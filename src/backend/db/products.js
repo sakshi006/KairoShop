@@ -7,6 +7,7 @@ import { v4 as uuid } from "uuid";
 
 export const products = [
   {
+    id:1,
     _id: uuid(),
     img:"https://images-na.ssl-images-amazon.com/images/I/41y2KJ+kDLL._SY344_BO1,204,203,200_.jpg",
     title: "You Can WIN",
@@ -18,6 +19,7 @@ export const products = [
     rating: 4.7,
   },
   {
+    id:2,
     _id: uuid(),
     img:"https://images-na.ssl-images-amazon.com/images/I/41y2KJ+kDLL._SY344_BO1,204,203,200_.jpg",
     title: "A Touch of Eternity",
@@ -29,6 +31,7 @@ export const products = [
     rating: 4,
   },
   {
+    id:3,
     _id:uuid(),
     img:"https://m.media-amazon.com/images/I/81b1PP4RK1L._AC_UY327_FMwebp_QL65_.jpg",
     title: "That Night: Four Friends. ",
@@ -40,6 +43,7 @@ export const products = [
     rating: 4.3,
   },
   {
+    id:4,
     _id: uuid(),
     title: "You are Winner",
     img:"https://images-eu.ssl-images-amazon.com/images/I/517sWS8zu0L._SY264_BO1,204,203,200_QL40_FMwebp_.jpg",
@@ -51,6 +55,7 @@ export const products = [
     rating: 4.0,
   },
   {
+    id:5,
     _id: uuid(),
     title: "Think and Grow Rich",
     img:"https://m.media-amazon.com/images/I/61b5aPmEhzL._AC_UY327_FMwebp_QL65_.jpg",
@@ -62,6 +67,7 @@ export const products = [
     rating: 3.6,
   },
   {
+    id:6,
     _id: uuid(),
     img: "https://rukminim1.flixcart.com/image/612/612/kwxv98w0/book/l/z/y/do-epic-shit-original-imag9gcfcwfvwtep.jpeg?q=70",
     title: "Do Epic Shit",
@@ -73,6 +79,7 @@ export const products = [
     rating: 4.6,
     },
   {
+    id:7,
     _id: uuid(),
     img: "https://rukminim1.flixcart.com/image/612/612/jpu324w0/book/0/9/0/believe-in-yourself-original-imafbzz2h7yfg5zz.jpeg?q=70",
     title: "Believe In Yourself",
@@ -85,6 +92,7 @@ export const products = [
     },
 
   {
+    id:8,
     _id: uuid(),
     img: "https://rukminim1.flixcart.com/image/612/612/kokdci80/regionalbooks/t/x/c/zero-to-one-original-imag2zzngtfasecu.jpeg?q=70",
     title: "Zero To One",
@@ -96,6 +104,7 @@ export const products = [
     rating: 2,
     },
   {
+    id:9,
     _id: uuid(),
     img: "https://d3i5mgdwi2ze58.cloudfront.net/hwi2qqngyicqz7s7ps4x4k1ei14k",
     title: "Atomic Habits",
@@ -108,6 +117,7 @@ export const products = [
     },
 
   {
+    id:10,
     _id: uuid(),
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTvrBNWlYmmsa_2M3BaJdurD9lve0SdNLAIA&usqp=CAU",
     title: "IKIGAI",
@@ -119,6 +129,7 @@ export const products = [
     rating: 4,
     },
   {
+    id:11,
     _id: uuid(),
     img: "https://rukminim1.flixcart.com/image/612/612/kgwld3k0/book/1/9/4/rich-dad-poor-dad-original-imafxf885pytvycy.jpeg?q=70",
     title: "Rich Dad Poor Dad",
@@ -130,6 +141,7 @@ export const products = [
     rating: 2,
     },
   {
+    id:12,
     _id: uuid(),
     img: "https://rukminim1.flixcart.com/image/612/612/kirr24w0-0/book/k/k/g/the-monk-who-sold-his-ferrari-original-imafyhgacv9jrgv7.jpeg?q=70",
     title: "Monk Who Sold His Ferrari",
@@ -141,6 +153,7 @@ export const products = [
     rating: 3,
     },
   {
+    id:13,
     _id: uuid(),
     img: "https://rukminim1.flixcart.com/image/612/612/ki96c280-0/book/3/p/n/one-indian-girl-original-imafy2zrymfbtygz.jpeg?q=70",
     title: "One Indian Girl",
@@ -152,6 +165,7 @@ export const products = [
     rating: 3,
     },
   {
+    id:14,
     _id: uuid(),
     img: "https://rukminim1.flixcart.com/image/612/612/kjbr8280-0/book/z/r/9/learning-how-to-fly-original-imafyx6zuhvfhv94.jpeg?q=70",
     title: "Learning How To Fly",
@@ -163,6 +177,7 @@ export const products = [
     rating: 2.5,
     },
   {
+    id:15,
     _id: uuid(),
     img: "https://rukminim1.flixcart.com/image/612/612/kwpam4w0/book/r/a/r/-original-imag9bv6bzstsjgk.jpeg?q=70",
     title: "400 Days",
@@ -174,6 +189,7 @@ export const products = [
     rating: 4,
     },
   {
+    id:16,
     _id: uuid(),
     img: "https://rukminim1.flixcart.com/image/612/612/khxqt8w0-0/book/x/o/v/attitude-is-everything-change-your-attitude-change-your-life-original-imafxtvesfbk8rje.jpeg?q=70",
     title: "Attitude Is Everything",
@@ -185,6 +201,7 @@ export const products = [
     rating: 3.5,
     },
   {
+    id:17,
     _id: uuid(),
     img: "https://rukminim1.flixcart.com/image/612/612/kufuikw0/book/p/3/d/man-s-search-for-meaning-original-imag7kerxrpweqj9.jpeg?q=70",
     title: "Man's Search For Meaning",
