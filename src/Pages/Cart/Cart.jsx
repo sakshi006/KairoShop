@@ -17,7 +17,7 @@ export const Cart = () => {
     <div className="cart-component">
   
     {cartProducts.cartList.map((cartproduct)=>{
-      return <CartCard cartproduct={cartproduct}/>
+      return <CartCard key={cartproduct.id} cartproduct={cartproduct}/>
     })}
 
     </div>

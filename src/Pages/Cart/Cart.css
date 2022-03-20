@@ -16,7 +16,7 @@
   .cart-component .footer {
     display: flex;
     flex-direction: column;
-    margin-top: 0rem !important;
+    margin-top: 0rem ;
   }
   
   .cart-component .qty-btn {
@@ -38,7 +38,7 @@
   }
   
   .cart-component .price-details-head {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--font);
     padding-bottom: 1rem;
   }
   
@@ -52,7 +52,21 @@
     padding: 1rem;
     background-color: white;
   }
-  
+
+ .flex-btn{
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+ }
+
+ .cart-component .wishlist-btn:hover{
+   color: var(--fav)
+ }
+ 
+ .cart-component .remove-cart-btn:hover{
+   color: var(--blue-text);
+ }
+
   /* responsive card img */
   
   @media screen and (max-width: 524px) {

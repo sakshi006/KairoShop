@@ -26,11 +26,11 @@ const CartCard = ({cartproduct}) => {
           <button className="btn qty-btn" onClick={()=>setCartProducts({type:"INCREMENT_QTY",payload:cartproduct})}>+</button>
         </div>
         <div className="footer">
-          <button className="btn cart-btn">
-            <i className="fas fa-heart"></i>Move to Wishlist
+          <button className="btn cart-btn flex-btn wishlist-btn">
+            <i className="fas fa-heart"></i><span>Move to Wishlist</span>
           </button>
-          <button className="btn cart-btn"  onClick={()=>setCartProducts({type:"REMOVE_FROM_CART",payload:cartproduct})}>
-            <i className="fas fa-shopping-cart" ></i> Remove from Cart
+          <button className="btn cart-btn flex-btn remove-cart-btn"  onClick={()=>setCartProducts({type:"REMOVE_FROM_CART",payload:cartproduct})}>
+            <i className="fas fa-shopping-cart" ></i> <span>Remove from Cart</span>
           </button>
         </div>
       </div>
