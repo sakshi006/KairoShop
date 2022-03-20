@@ -1,0 +1,45 @@
+.main-content-ecom{
+  margin-top: 6rem;
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: 20% 80%;
+  }
+  
+ 
+  
+  /* products page */
+  
+  .products-page {
+    background-color: var(--secondary);
+    padding: 1rem;
+  }
+  
+  .products-head{
+      text-align: left;
+      margin: 1rem;
+      font-weight: bold;
+  }
+  
+.product-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(14rem,1fr));
+    row-gap: 2.5rem;
+    column-gap: 2rem;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+  }
+
+  /* respnosiveness */
+  
+  @media screen and (max-width:848px){
+      .filters{
+          display: none;
+      }
+  
+      .product-grid{
+          grid-template-columns: 100%;
+      }
+  }
