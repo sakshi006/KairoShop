@@ -1,22 +1,32 @@
 export const categoryFilter = (products, categoryFilter) => {
-  const { Fiction, NonFiction, SelfHelp } = categoryFilter;
+  const { fiction, nonFiction, selfHelp, romance,horror } = categoryFilter;
 
-  if (!Fiction && !NonFiction && !SelfHelp) return products; //if no category selected
+
+  if (!fiction && !nonFiction && !selfHelp &&!romance && !horror) return products; //if no category selected
   let FictionFiltered = [],
     NonFictionFiltered = [],
-    SelfHelpFiltered = [];
+    SelfHelpFiltered = [],
+    RomanceFiltered=[],
+    HorrorFiltered=[];
 
-  if (Fiction) {
-    FictionFiltered = products.filter((item) => item.category === "Fiction");
+
+  if (fiction) {
+    FictionFiltered = products.filter((item) => item.categoryName === "fiction");
   }
-  if (NonFiction) {
+  if (nonFiction) {
     NonFictionFiltered = products.filter(
-      (item) => item.category === "Non Fiction"
+      (item) => item.categoryName === "non-fiction"
     );
   }
-  if (SelfHelp) {
-    SelfHelpFiltered = products.filter((item) => item.category === "Self Help");
+  if (selfHelp) {
+    SelfHelpFiltered = products.filter((item) => item.categoryName === "Self Help");
+  }
+  if (romance) {
+    RomanceFiltered = products.filter((item) => item.categoryName === "romance");
+  }
+  if (horror) {
+    HorrorFiltered = products.filter((item) => item.categoryName === "horror");
   }
 
-  return [...FictionFiltered,...NonFictionFiltered,...SelfHelpFiltered];
+  return [...FictionFiltered,...NonFictionFiltered,...SelfHelpFiltered,...RomanceFiltered,...HorrorFiltered];
 };

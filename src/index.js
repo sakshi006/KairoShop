@@ -2,15 +2,22 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
+import { makeServer } from "./server";
 
-import { FilterProvider} from "./context/filterContext"
+import { FilterProvider } from "./context/filterContext";
+import { ProductContextProvider } from "./context/productContext";
+
+// Call make Server
+makeServer();
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <FilterProvider>
-        <App />
-      </FilterProvider>
+      <ProductContextProvider>
+        <FilterProvider>
+          <App />
+        </FilterProvider>
+      </ProductContextProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")

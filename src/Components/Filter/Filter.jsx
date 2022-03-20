@@ -6,7 +6,7 @@ const Filter = () => {
   const {
     state: {
       sortBy,
-      category: { Fiction, NonFiction, SelfHelp },
+      category: { fiction, nonFiction, selfHelp, romance, horror },
       price,
       BestSeller
     },
@@ -117,7 +117,7 @@ const Filter = () => {
                 id="fiction"
                 name="fiction"
                 value="fiction"
-                checked={Fiction}
+                checked={fiction}
                 onChange={() => dispatch({ type: "FICTION" })}
               />
               Fiction
@@ -130,7 +130,7 @@ const Filter = () => {
                 id="nonfiction"
                 name="nonfiction"
                 value="nonfiction"
-                checked={NonFiction}
+                checked={nonFiction}
                 onChange={() => dispatch({ type: "NON_FICTION" })}
               />
               Non Fiction
@@ -143,10 +143,36 @@ const Filter = () => {
                 id="selfhelp"
                 name="selfhelp"
                 value="selfhelp"
-                checked={SelfHelp}
+                checked={selfHelp}
                 onChange={() => dispatch({ type: "SELF_HELP" })}
               />
               Self Help
+            </label>
+          </div>
+          <div>
+            <label htmlFor="romance">
+              <input
+                type="checkbox"
+                id="romance"
+                name="romance"
+                value="romance"
+                checked={romance}
+                onChange={() => dispatch({ type: "ROMANCE" })}
+              />
+             Romance
+            </label>
+          </div>
+          <div>
+            <label htmlFor="horror">
+              <input
+                type="checkbox"
+                id="horror"
+                name="horror"
+                value="horror"
+                checked={horror}
+                onChange={() => dispatch({ type: "HORROR" })}
+              />
+             Horror
             </label>
           </div>
         </div>
@@ -172,7 +198,7 @@ const Filter = () => {
             <option value="750" label="750"></option>
             <option value="1100" label="1100"></option>
           </datalist>
-          <div className="range-marker"><span>50</span><span>350</span><span>750</span><span>1100</span></div>
+          <div className="range-marker"><span>50</span><span>400</span><span>750</span><span>1100</span></div>
         </div>
       </form>
     </div>

@@ -8,9 +8,9 @@ const useFilter = () => useContext(FilterContext);
 const FilterProvider = ({ children }) => {
   const [state, dispatch] = useReducer(filterReducer, {
     sortBy: "",
-    category: { Fiction: false, NonFiction: false, SelfHelp: false},
+    category: { fiction: false, nonFiction: false, selfHelp: false, romance:false,horror:false},
     isBestSeller: "",
-    price: 1200,
+    price: 1100,
     BestSeller: false,
   });
 

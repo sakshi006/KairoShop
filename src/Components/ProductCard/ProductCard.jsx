@@ -6,14 +6,12 @@ import { AiTwotoneStar } from "react-icons/ai";
 const ProductCard = ({
   item: {
     author,
-    category,
     img,
     isBestSeller,
-    name,
+    title,
     originalPrice,
     price,
     rating,
-    discount
   },
 }) => {
 
@@ -27,9 +25,9 @@ const ProductCard = ({
         <span className="fav">
           <i className="fas fa-heart"></i>
         </span>
-        <img className="product-card-image" src={img} alt={name} />
+        <img className="product-card-image" src={img} alt={title} />
         <div className="product-detail">
-          <strong>{name}</strong>
+          <strong>{title}</strong>
           <p>{author}</p>
 
           <div className="footer">

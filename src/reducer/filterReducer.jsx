@@ -1,4 +1,5 @@
 export const filterReducer = (state, action) => {
+  // console.log("STATEEEEEEE",state,action.type)
   switch (action.type) {
     case "LOW_TO_HIGH":
       return { ...state, sortBy: "LOW_TO_HIGH" };
@@ -11,21 +12,31 @@ export const filterReducer = (state, action) => {
     case "RATING":
       return { ...state, sortBy: "RATING" };
     case "BEST_SELLER":
-       return {...state, BestSeller : !state.BestSeller}
+      return { ...state, BestSeller: !state.BestSeller };
     case "FICTION":
       return {
         ...state,
-        category: { ...state.category, Fiction: !state.category.Fiction },
+        category: { ...state.category, fiction: !state.category.fiction },
       };
     case "NON_FICTION":
       return {
         ...state,
-        category: { ...state.category, NonFiction: !state.category.NonFiction },
+        category: { ...state.category, nonFiction: !state.category.nonFiction },
       };
     case "SELF_HELP":
       return {
         ...state,
-        category: { ...state.category, SelfHelp: !state.category.SelfHelp },
+        category: { ...state.category, selfHelp: !state.category.selfHelp },
+      };
+    case "ROMANCE":
+      return {
+        ...state,
+        category: { ...state.category, romance: !state.category.romance },
+      };
+    case "HORROR":
+      return {
+        ...state,
+        category: { ...state.category, horror: !state.category.horror },
       };
     case "PRICE":
       return {
@@ -33,13 +44,13 @@ export const filterReducer = (state, action) => {
         price: action.price_value,
       };
     case "CLEAR":
-        return {
-            sortBy: "",
-            category: { Fiction: false, NonFiction: false, SelfHelp: false},
-            isBestSeller: "",
-            price: 1200,
-            rating: "",
-        }
+      return {
+        sortBy: "",
+        category: { Fiction: false, NonFiction: false, SelfHelp: false },
+        isBestSeller: "",
+        price: 1200,
+        rating: "",
+      };
 
     default:
       return state;
