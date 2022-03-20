@@ -4,9 +4,15 @@ import { BsSearch, BsFillCartFill, BsFillSuitHeartFill } from "react-icons/bs";
 import "./Navbar.css";
 
 import { Link } from "react-router-dom";
+import { useCartContext } from "../../context/cartContext";
 
 const Navbar = () => {
   const [searchValue, setSearchValue] = useState();
+  const {cartProducts} = useCartContext()
+
+  const itemInCartReducer = (prev,curr)=> prev+curr.quantity;
+  const totalItemsInCart = cartProducts.cartList.reduce(itemInCartReducer,0)
+
   return (
     <nav className="navbar">
       <h2 className="logo">
@@ -31,7 +37,7 @@ const Navbar = () => {
           <BsFillSuitHeartFill className="nav-heart" />
         </Link>
         <Link to="/cart" className="child-ecom">
-          <span className="badgeecom two">2</span>
+          <span className="badgeecom two">{totalItemsInCart}</span>
           <BsFillCartFill className="nav-cart" />
         </Link>
       </div>
