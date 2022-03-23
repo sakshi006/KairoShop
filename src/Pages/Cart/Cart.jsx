@@ -1,7 +1,7 @@
 import React from "react";
 import CartCard from "../../Components/CartCard/CartCard";
 import CartPrice from "../../Components/CartCard/CartPrice";
-import { useCartContext } from "../../context/cartContext";
+import { useCartContext } from "../../context";
 import "./Cart.css"
 
 export const Cart = () => {

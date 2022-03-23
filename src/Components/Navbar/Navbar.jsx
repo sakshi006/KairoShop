@@ -4,14 +4,16 @@ import { BsSearch, BsFillCartFill, BsFillSuitHeartFill } from "react-icons/bs";
 import "./Navbar.css";
 
 import { Link } from "react-router-dom";
-import { useCartContext } from "../../context/cartContext";
+import { useCartContext,useWishListContext } from "../../context";
 
 const Navbar = () => {
   const [searchValue, setSearchValue] = useState();
   const {cartProducts} = useCartContext()
+  const {wishListState} = useWishListContext();
 
   const itemInCartReducer = (prev,curr)=> prev+curr.quantity;
   const totalItemsInCart = cartProducts.cartList.reduce(itemInCartReducer,0)
+
 
   return (
     <nav className="navbar">
@@ -33,7 +35,7 @@ const Navbar = () => {
           <button className="btn">Login</button>
         </Link>
         <Link to="/wishlist" className="child-ecom">
-          <span className="badgeecom one">10</span>
+          <span className="badgeecom two">{ wishListState.wishListArray.length}</span>
           <BsFillSuitHeartFill className="nav-heart" />
         </Link>
         <Link to="/cart" className="child-ecom">

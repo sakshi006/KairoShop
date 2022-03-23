@@ -60,11 +60,17 @@
  }
 
  .cart-component .wishlist-btn:hover{
-   color: var(--fav)
+   color: var(--fav);
+   text-decoration: none;
  }
  
  .cart-component .remove-cart-btn:hover{
    color: var(--blue-text);
+ }
+
+ .link-to-wishlist{
+   text-decoration: none;
+   width: 100%;
  }
 
   /* responsive card img */

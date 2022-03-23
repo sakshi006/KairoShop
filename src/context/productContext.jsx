@@ -14,7 +14,6 @@ const ProductContextProvider = ({children})=>{
     const getProducts = async()=>{
         try{
             const responseFromServer = await axios.get("/api/products");
-            // console.log(responseFromServer.data)
             setProducts(responseFromServer.data.products)
             setLoader(false)
         }catch(err){

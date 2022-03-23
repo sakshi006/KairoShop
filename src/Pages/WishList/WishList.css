@@ -1,0 +1,32 @@
+.centered-wishlist {
+  box-sizing: border-box;
+  max-width: 90%;
+  margin: auto;
+  text-align: center;
+}
+.grey-heart{
+  color: var(--grey);
+}
+
+.red-heart{
+  color: var(--fav);
+}
+
+
+.centered-wishlist .discount {
+  color: var(--primary);
+  }
+
+/* grid */
+
+.centered-wishlist .wishlist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  row-gap: 2.5rem;
+  column-gap: 1.5rem;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+

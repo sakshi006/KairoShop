@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { homePageProducts } from "../Assets/HomePageData/Homepagedata";
-import { homePageGeneral } from "../Assets/HomePageData/HomePageGeneral";
+import { homePageProducts } from "../../Assets/HomePageData/Homepagedata";
+import { homePageGeneral } from "../../Assets/HomePageData/HomePageGeneral";
 
 import "./Home.css";
-import headerImg1 from "../Assets/head2.jpg";
-import HorizontalCard from "../Components/HorizontalCard/HorizontalCard";
+import headerImg1 from "../../Assets/head2.jpg";
+import HorizontalCard from "../../Components/HorizontalCard/HorizontalCard";
 
 export const Home = () => {
   return (
@@ -37,11 +37,11 @@ export const Home = () => {
       
       </section>
       <div className= "home-footer">
-      {homePageGeneral.map((item)=><>
+      {homePageGeneral.map((item)=><div key={item.name}>
         <img src={item.img} alt="free-trial" />
           <h3>{item.name}</h3>
           <p>{item.description}</p>
-        </>)}
+        </div>)}
       
       </div>
     </div>
