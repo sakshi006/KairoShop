@@ -1,12 +1,14 @@
 import React from "react";
-import { useCartContext } from "../../context/cartContext";
+import { useCartContext,useWishListContext } from "../../context";
 import "./ProductCard.css";
 import { calcPercentage } from "../../Utils/discountCalculator";
 
 import { AiTwotoneStar } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ item }) => {
   const { cartProducts, setCartProducts } = useCartContext();
+  const { wishListState, setWishListState } = useWishListContext();
 
   return (
     <div className="grid-item">
@@ -14,9 +16,34 @@ const ProductCard = ({ item }) => {
         {item.isBestSeller ? (
           <span className="update-badge">BestSeller</span>
         ) : null}
-        <span className="fav">
-          <i className="fas fa-heart"></i>
-        </span>
+        {wishListState.wishListArray.find(
+          (product) => product.id === item.id
+        ) ? (
+          <span className="fav">
+            <i
+              className="fas fa-heart red-heart"
+              onClick={() =>
+                setWishListState({
+                  type: "REMOVE_FROM_WISHLIST",
+                  payload: item,
+                })
+              }
+            >
+              {" "}
+            </i>
+          </span>
+        ) : (
+          <span className="fav">
+            <i
+              className="fas fa-heart grey-heart"
+              onClick={() =>
+                setWishListState({ type: "ADD_TO_WISHLIST", payload: item })
+              }
+            >
+              {" "}
+            </i>
+          </span>
+        )}
         <img className="product-card-image" src={item.img} alt={item.title} />
         <div className="product-detail">
           <strong>{item.title}</strong>
@@ -27,7 +54,7 @@ const ProductCard = ({ item }) => {
               Rs.{item.price}
               <span className="old-price">Rs.{item.originalPrice}</span>
               <span className="discount">
-                {calcPercentage(item.price, item.originalPrice)}%{" "}
+                {calcPercentage(item.price, item.originalPrice)}%
               </span>
             </p>
             <span
@@ -40,14 +67,9 @@ const ProductCard = ({ item }) => {
             </span>
           </div>
           {cartProducts.cartList.find((cartItem) => cartItem.id === item.id) ? (
-            <button
-              className="btn cart-remove cart-btn "
-              onClick={() =>
-                setCartProducts({ type: "REMOVE_FROM_CART", payload: item })
-              }
-            >
-              Remove From Cart
-            </button>
+            <Link to="/cart">
+              <button className="btn cart-remove cart-btn ">Go To Cart</button>
+            </Link>
           ) : (
             <button
               className="btn cart-btn"

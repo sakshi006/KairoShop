@@ -2,14 +2,13 @@ import React from "react";
 import "./ProductList.css";
 import ProductCard from "../../Components/ProductCard/ProductCard";
 import Filter from "../../Components/Filter/Filter";
-import { useFilter } from "../../context/filterContext";
+import { useFilter,useProductContext } from "../../context";
 import {
   sortProduct,
   categoryFilter,
   PriceFilter,
   BestSellerFunc,
 } from "../../Utils";
-import { useProductContext } from "../../context/productContext";
 
 export const ProductList = () => {
   const {
@@ -17,7 +16,6 @@ export const ProductList = () => {
   } = useFilter();
   const { loader, products } = useProductContext();
 
-  // console.log(products.length)
 
   // const sortedProducts = sortProduct(products, sortBy);
   // const categoryFilteredProducts = categoryFilter(products,category)

@@ -1,6 +1,4 @@
 export const cartReducerFunction = (state, action) => {
-//   console.log(action, "ACTION");
-//   console.log("STATE,", state);
   switch (action.type) {
     case "REMOVE_FROM_CART":
       const filteredProducts = state.cartList.filter(
