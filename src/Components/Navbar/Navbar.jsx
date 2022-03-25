@@ -34,6 +34,9 @@ const Navbar = () => {
         <Link to="/login">
           <button className="btn">Login</button>
         </Link>
+        <Link to="/productlist">
+          <button className="btn">Shop</button>
+        </Link>
         <Link to="/wishlist" className="child-ecom">
           <span className="badgeecom two">{ wishListState.wishListArray.length}</span>
           <BsFillSuitHeartFill className="nav-heart" />

@@ -32,9 +32,9 @@
     justify-items: center;
   }
 
-  /* respnosiveness */
+  /* respnosiveness*/
   
-  @media screen and (max-width:848px){
+  /* @media screen and (max-width:848px){
       .filters{
           display: none;
       }
@@ -42,4 +42,4 @@
       .product-grid{
           grid-template-columns: 100%;
       }
-  }
+  } */

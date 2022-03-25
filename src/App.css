@@ -24,3 +24,11 @@
 body {
   font-family: "Zen Kaku Gothic Antique", sans-serif;
 }
+
+@media screen and (max-width:747px){
+  
+  .content,.main-content-ecom{
+    margin: 10rem auto !important; 
+  }
+  /* had to put this important to override the CSS margin property because of which the products were getting hidden by navbar  */
+}

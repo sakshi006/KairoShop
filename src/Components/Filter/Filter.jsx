@@ -11,9 +11,15 @@ const Filter = () => {
       BestSeller
     },
     dispatch,
-  } = useFilter();
+  } = useFilter(); 
   return (
     <div className="filters">
+      <input type="checkbox" id="sidebar-check" />
+      <label for="sidebar-check">
+        <i className="fas fa-bars" id="sidebar-btn">Filters</i>
+        <i className="fas fa-times" id="sidebar-cancel"></i>
+      </label>
+      <div className="sidebar">
       <div className="filter-heading">
         <h3 className="filter-head main">Filters</h3>
         <p onClick={()=>dispatch({type:"CLEAR"})} className="filter-head clear">Clear All</p>
@@ -201,6 +207,7 @@ const Filter = () => {
           <div className="range-marker"><span>50</span><span>400</span><span>750</span><span>1100</span></div>
         </div>
       </form>
+      </div>
     </div>
   );
 };
