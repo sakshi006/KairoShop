@@ -75,6 +75,8 @@
       transition: all .5s ease;
       z-index: 999;
       border-bottom-right-radius: 1rem;
+      border-bottom: 2px solid var(--other);
+      border-right: 2px solid var(--other);
     }
     #sidebar-btn,#sidebar-cancel{
       display:block;
@@ -95,6 +97,8 @@
       font-size: 18px;
       border-radius: 5px;
       transition: all .5s ease;
+      border: 2px solid var(--other);
+      border-top: none;
     }
 
     label #sidebar-btn{
