@@ -19,7 +19,7 @@ export const homePageProducts = [
     _id: uuid(),
     img: "https://rukminim1.flixcart.com/image/612/612/kjbr8280-0/book/z/r/9/learning-how-to-fly-original-imafyx6zuhvfhv94.jpeg?q=70",
     name: "Learning How To Fly",
-description:"Through stories from his own life, those of his teachers and mentors as well as stories of some of the greatest men and women of the world and the latest developments in science and technology.",
+description:"Through stories from his own life, those of his teachers and mentors as well as stories of some of the greatest men and women of the world and the latest developments.",
     category: "Fiction",
   },
 ];
