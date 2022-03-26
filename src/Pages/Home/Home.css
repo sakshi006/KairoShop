@@ -37,6 +37,8 @@
   background-color: var(--secondary);
 }
 
+
+
 .show-products:hover {
   opacity: 0.8;
   cursor: pointer;
@@ -53,10 +55,16 @@
 }
 
 
+
 @media screen and (max-width:575px) {
   
   .hero-text{
-    font-size: 1rem;
+    font-size: 0.8rem;
+    
+  }
+  .show-products {
+    font-size: small;
+    padding: 0.5rem;
   }
 }
 

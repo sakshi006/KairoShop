@@ -4,14 +4,14 @@ import "./HorizontalCard.css";
 const HorizontalCard = ({ item }) => {
   const { name, img, category, description } = item;
   return (
-    <div className="cardcom white">
+    <div className="cardcom white small-h">
       <div className="card horizontal">
         <img className="card-img" src={img} alt={category} />
         <div className="product-detail">
-          <h3>{category}</h3>
-          <h2>{name}</h2>
+          <p className="category">{category}</p>
+          <p className="name">{name}</p>
           <div className="footer">{description}</div>
-        </div>
+        </div> 
       </div>
     </div>
   );

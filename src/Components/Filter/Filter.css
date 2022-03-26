@@ -52,4 +52,82 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  } 
+
+
+  #sidebar-check,#sidebar-btn,#sidebar-cancel{
+    display: none;
   }
+
+
+  @media screen and (max-width:1000px) {
+
+    .filters {
+      padding: 0rem;
+    }
+    .sidebar{
+      position: absolute;
+      left: -248px;
+      width: 240px;
+      height: 100%;
+      padding: 0.2rem;
+      background-color: var(--other-secondary);
+      transition: all .5s ease;
+      z-index: 999;
+      border-bottom-right-radius: 1rem;
+      border-bottom: 2px solid var(--other);
+      border-right: 2px solid var(--other);
+    }
+    #sidebar-btn,#sidebar-cancel{
+      display:block;
+    }
+    .product-grid{
+      grid-template-columns: 100%;
+  }
+  
+  
+    label #sidebar-btn, label #sidebar-cancel{
+      position: absolute;
+      cursor: pointer;
+      background-color: var(--other-secondary);
+      height: 24px;
+      width: 24px;
+      line-height: 24px;
+      text-align: center;
+      font-size: 18px;
+      border-radius: 5px;
+      transition: all .5s ease;
+      border: 2px solid var(--other);
+      border-top: none;
+    }
+
+    label #sidebar-btn{
+      width: fit-content;
+      padding: 0.2rem;
+      letter-spacing: 0.12rem;
+    }
+
+    
+  
+    label #sidebar-cancel{
+      opacity: 0;
+      visibility: hidden;
+    }
+  
+    #sidebar-check:checked ~ label #sidebar-btn{
+      margin-left: 245px;
+      opacity: 0;
+      visibility: hidden;
+    }
+  
+    #sidebar-check:checked ~ label #sidebar-cancel{
+      margin-left: 245px;
+      opacity: 1;
+      visibility: visible;
+    }
+  
+    #sidebar-check:checked ~ .sidebar{
+      left: 0;
+    }
+  }
+  

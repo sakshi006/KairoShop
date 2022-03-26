@@ -8,7 +8,7 @@
     top: 0;
     width: 100%;
     left: 0;
-    z-index: 1;
+    z-index: 9999;
     background-color: var(--secondary);
     padding: 0.6rem 0rem;
   }
@@ -85,6 +85,11 @@
   .btn:hover{
       box-shadow: 1px 1px 4px 2px var(--primary);
   }
+
+  .navbar .btn{
+    margin-left: 0.2rem;
+    width: fit-content;
+  }
   
   
   
@@ -109,3 +114,32 @@
       left: 0.2rem;
     }
   
+
+
+    /* responsiveness */
+
+    @media screen and (max-width:747px) {
+
+      .navbar .logo{
+        /* margin-bottom: 1rem; */
+      }
+      .navbar .input-container{
+       width: 80%;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+       
+        background-color: var(--secondary);
+      }
+
+      .top-links {
+        justify-content: center;
+        margin-right: 0rem;
+      }
+
+    }

@@ -7,6 +7,30 @@
   padding: 0.3rem;
 }
 
+
+@media screen and (max-width:524px) {
+
+  .horizontal{
+    width: 18rem;
+    height: 18rem;
+    margin: auto;
+  }
+  
+.horizontal .card-img{
+  height: 14.5rem;
+  width: 10rem;
+}
+
+.horizontal .product-detail {
+  line-height: 1.2rem;
+}
+
+}
+
+.horizontal .category,.name{
+  font-weight: bold;
+}
+
 .footer {
   width: 12ch;
   line-height: 1rem;
