@@ -12,7 +12,6 @@ const CartContextProvider = ({ children }) => {
   });
 
   const getCartData = async () => {
-    setCartProducts({ type: "API_REQUEST" });
     try {
       const response = await axios.get("/api/user/cart");
       setCartProducts({
@@ -20,7 +19,7 @@ const CartContextProvider = ({ children }) => {
         payload: response.data.cart,
       });
     } catch (error) {
-      setCartProducts({ type: "ERROR_HANDLE" });
+      console.log(error)
     }
   };
 
