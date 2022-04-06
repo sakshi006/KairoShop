@@ -10,6 +10,7 @@ const ProductCard = ({ item }) => {
   const { cartProducts, addToCart } = useCartContext();
   const { wishListState, setWishListState } = useWishListContext();
 
+
   return (
     <div className="grid-item">
       <div className="card-ecom card-badge">
@@ -17,7 +18,7 @@ const ProductCard = ({ item }) => {
           <span className="update-badge">BestSeller</span>
         ) : null}
         {wishListState.wishListArray.find(
-          (product) => product.id === item.id
+          (product) => product._id === item._id
         ) ? (
           <span className="fav">
             <i
@@ -44,7 +45,7 @@ const ProductCard = ({ item }) => {
             </i>
           </span>
         )}
-       <Link className="single-product-link" to={`/product/${item.id}`}>
+       <Link className="single-product-link" to={`/product/${item._id}`}>
        <img className="product-card-image" src={item.img} alt={item.title} /></Link>
         <div className="product-detail">
         <Link className="single-product-link" to={`/product/${item._id}`}><strong>{item.title}</strong>
@@ -67,7 +68,7 @@ const ProductCard = ({ item }) => {
               <AiTwotoneStar />
             </span>
           </div>
-          {cartProducts.cartList.find((cartItem) => cartItem.id === item.id) ? (
+          {cartProducts.cart.find((cartItem) => cartItem._id === item._id) ? (
             <Link to="/cart">
               <button className="btn cart-remove cart-btn ">Go To Cart</button>
             </Link>

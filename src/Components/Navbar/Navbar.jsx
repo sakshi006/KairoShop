@@ -12,8 +12,8 @@ const Navbar = () => {
   const {wishListState} = useWishListContext();
   const {dispatch} = useFilter();
 
-  const itemInCartReducer = (prev,curr)=> prev+curr.quantity;
-  const totalItemsInCart = cartProducts.cartList.reduce(itemInCartReducer,0)
+  const itemInCartReducer = (prev,curr)=> prev+curr.qty;
+  const totalItemsInCart = cartProducts.cart.reduce(itemInCartReducer,0)
   
 
   const navigate = useNavigate();

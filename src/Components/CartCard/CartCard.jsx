@@ -32,7 +32,7 @@ const CartCard = ({ cartproduct }) => {
             >
               -
             </button>
-            <span className="qty-display">{cartproduct.quantity}</span>
+            <span className="qty-display">{cartproduct.qty}</span>
             <button
               className="btn qty-btn"
               onClick={() =>

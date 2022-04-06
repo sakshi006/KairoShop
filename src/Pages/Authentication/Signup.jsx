@@ -29,7 +29,7 @@ const logInUser=async(e)=>{
         password:credentials.password
       })
       .then(res=>{
-        localStorage.setItem('token',res.data.encodedToken)
+        localStorage.setItem('token',"sakshi1234")
         navigate('/')
       }).catch((err)=>alert('got api error',err))
   }else{

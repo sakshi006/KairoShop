@@ -9,10 +9,8 @@ const useCartContext = () => useContext(CartContext);
 
 const CartContextProvider = ({ children }) => {
   let token = localStorage.getItem("token");
-
-  console.log(token,"IN CART CONTEXT")
   const [cartProducts, setCartProducts] = useReducer(cartReducerFunction, {
-    cartList: [],
+    cart: [],
   });
 
   const getCartData = async () => {
@@ -30,12 +28,10 @@ const CartContextProvider = ({ children }) => {
   };
 
   const addToCart = async (item) => {
-  
-    const findIndex = cartProducts.cartList.findIndex(
-      (prod) => prod.id === item.id
+    const findIndex = cartProducts.cart.findIndex(
+      (prod) => prod._id === item._id
     );
     
-console.log(findIndex)
     if (findIndex === -1) {
       try {
         const response = await axios.post(
@@ -47,17 +43,16 @@ console.log(findIndex)
         );
         setCartProducts({ type: "ADD_TO_CART", payload: response.data.cart });
       } catch (error) {
-        console.error(error,"addToCart");
+        console.error(error.response.data,"addToCarttryblockif");
         setCartProducts({ type: "ERROR_HANDLE" })
       }
     } else {
       try {
-        const response = await axios.delete(`/api/user/cart/${item.id}`, {
+        const response = await axios.delete(`/api/user/cart/${item._id}`, {
           headers: { authorization: token },
         });
         setCartProducts({ type: "ADD_TO_CART", payload: response.data.cart });
       } catch (error) {
-        console.log(error,"addToCart");
         setCartProducts({ type: "ERROR_HANDLE" });
       }
     }
@@ -66,7 +61,7 @@ console.log(findIndex)
   const incrementQty = async (item) => {
     try {
       const res = await axios.post(
-        `/api/user/cart/${item.id}`,
+        `/api/user/cart/${item._id}`,
         {
           action: { type: "increment" },
         },
@@ -83,7 +78,7 @@ console.log(findIndex)
   const decrementQty = async (item) => {
     try {
       const res = await axios.post(
-        `/api/user/cart/${item.id}`,
+        `/api/user/cart/${item._id}`,
         {
           action: { type: "decrement" },
         },
@@ -99,6 +94,7 @@ console.log(findIndex)
 
   useEffect(() => {
     getCartData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

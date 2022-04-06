@@ -6,17 +6,17 @@ const CartPrice = () => {
 
   const {cartProducts} = useCartContext();
 
-  const cartTotalReducer = (prev,curr)=>prev+(curr.quantity*curr.originalPrice)
-  const cartTotalAmount = cartProducts.cartList.reduce(cartTotalReducer,0);
+  const cartTotalReducer = (prev,curr)=>prev+(curr.qty*curr.originalPrice)
+  const cartTotalAmount = cartProducts.cart.reduce(cartTotalReducer,0);
   
-  const itemInCartReducer = (prev,curr)=> prev+curr.quantity;
-  const totalItemsInCart = cartProducts.cartList.reduce(itemInCartReducer,0)
+  const itemInCartReducer = (prev,curr)=> prev+curr.qty;
+  const totalItemsInCart = cartProducts.cart.reduce(itemInCartReducer,0)
 
-  const totaldiscountReducer = (prev,curr) => prev+((curr.originalPrice-curr.price)*curr.quantity)
-  const totaldiscount = cartProducts.cartList.reduce(totaldiscountReducer,0)
+  const totaldiscountReducer = (prev,curr) => prev+((curr.originalPrice-curr.price)*curr.qty)
+  const totaldiscount = cartProducts.cart.reduce(totaldiscountReducer,0)
 
-  const discountedPriceReducer = (prev,curr)=> prev+(curr.quantity*curr.price)
-  const discountedPrice = cartProducts.cartList.reduce(discountedPriceReducer,0)
+  const discountedPriceReducer = (prev,curr)=> prev+(curr.qty*curr.price)
+  const discountedPrice = cartProducts.cart.reduce(discountedPriceReducer,0)
 
   return (
     <div className="cart-price-details  card-cart">

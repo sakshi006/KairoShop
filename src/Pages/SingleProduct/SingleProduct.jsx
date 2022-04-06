@@ -8,8 +8,10 @@ const SingleProduct = () => {
   const { productid } = useParams();
   const { products } = useProductContext();
   const {setCartProducts} = useCartContext();
+  console.log(productid)
 
-  const singleProduct = products.find((item) => item.id === productid);
+  const singleProduct = products.find((item) => item._id === productid);
+
 
   return (
     <div className="single-product content">

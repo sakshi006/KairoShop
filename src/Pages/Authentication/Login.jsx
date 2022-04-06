@@ -10,7 +10,7 @@ export const Login = () => {
 
   const dummyUser = {
     email: "adarshbalika@gmail.com",
-    pass: "adarshBalika123",
+    pass: "adarshbalika",
   };
 
   const addDummyUser = (e) => {
@@ -32,10 +32,11 @@ export const Login = () => {
         password: credentials.pass,
       })
       .then((res) => {
-        localStorage.setItem("token", "1234");
+        console.log(res)
+        localStorage.setItem("token", res.data.encodedToken);
         navigate("/");
       })
-      .catch((err) => alert("USER NOT FOUND"));
+      .catch((err) => alert(err,"USER NOT FOUND"));
   };
 
   return (
