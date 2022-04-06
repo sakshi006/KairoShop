@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 const ProductCard = ({ item }) => {
   const { cartProducts, addToCart } = useCartContext();
   const { wishListState, setWishListState } = useWishListContext();
+  const token = localStorage.getItem("token")
 
 
   return (
@@ -69,14 +70,16 @@ const ProductCard = ({ item }) => {
             </span>
           </div>
           {cartProducts.cart.find((cartItem) => cartItem._id === item._id) ? (
-            <Link to="/cart">
+           token ? <Link to="/cart">
+              <button className="btn cart-remove cart-btn ">Go To Cart</button>
+            </Link> :<Link to="/login">
               <button className="btn cart-remove cart-btn ">Go To Cart</button>
             </Link>
           ) : (
             <button
               className="btn cart-btn"
               onClick={() =>
-                addToCart(item)
+               token && addToCart(item)
               }
             >
               Add to Cart

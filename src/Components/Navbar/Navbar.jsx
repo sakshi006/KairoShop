@@ -56,11 +56,11 @@ const Navbar = () => {
           <button className="btn">Shop</button>
         </Link>
         <Link to="/wishlist" className="child-ecom">
-          <span className="badgeecom two">{ wishListState.wishListArray.length}</span>
+          <span className="badgeecom two">{token ? wishListState.wishListArray.length : 0}</span>
           <BsFillSuitHeartFill className="nav-heart" />
         </Link>
         <Link to="/cart" className="child-ecom">
-          <span className="badgeecom two">{totalItemsInCart}</span>
+          <span className="badgeecom two">{token ? totalItemsInCart : 0}</span>
           <BsFillCartFill className="nav-cart" />
         </Link>
       </div>
