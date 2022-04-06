@@ -8,7 +8,7 @@ export const Login = () => {
         <form className='auth-form'>
           <h1>Login</h1>
           <div class="form-item">
-            <label for="email">Email Address</label>
+            <label htmlFor="email">Email Address</label>
             <input class="input-field login-input"
               type="email"
               id="email"
@@ -16,7 +16,7 @@ export const Login = () => {
             />
           </div>
           <div class="form-item">
-            <label for="password">Password
+            <label htmlFor="password">Password
             </label>
             <input class="input-field login-input" type="password" id="password" placeholder="*****" />
           </div>

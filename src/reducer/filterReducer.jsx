@@ -17,12 +17,12 @@ export const filterReducer = (state, action) => {
         ...state,
         category: { ...state.category, fiction: !state.category.fiction },
       };
-    case "NON_FICTION":
+    case "NON FICTION":
       return {
         ...state,
         category: { ...state.category, nonFiction: !state.category.nonFiction },
       };
-    case "SELF_HELP":
+    case "SELF HELP":
       return {
         ...state,
         category: { ...state.category, selfHelp: !state.category.selfHelp },
@@ -45,7 +45,7 @@ export const filterReducer = (state, action) => {
     case "CLEAR":
       return {
         sortBy: "",
-        category: { Fiction: false, NonFiction: false, SelfHelp: false },
+        category: { fiction: false, nonFiction: false, selfHelp: false, romance:false,horror:false },
         isBestSeller: "",
         price: 1200,
         rating: "",

@@ -9,7 +9,7 @@ const Signup = () => {
 <form class="auth-form signup-form">
   <h1>Signup</h1>
   <div class="form-item">
-    <label for="name">Full Name</label>
+    <label htmlFor="name">Full Name</label>
     <input class="input-field login-input"
       type="text"
       id="name"
@@ -17,7 +17,7 @@ const Signup = () => {
     />
   </div>
   <div class="form-item">
-    <label for="email">Email Address</label>
+    <label htmlFor="email">Email Address</label>
     <input class="input-field login-input"
       type="email"
       id="email"
@@ -25,12 +25,12 @@ const Signup = () => {
     />
   </div>
   <div class="form-item">
-    <label for="password">Password
+    <label htmlFor="password">Password
     </label>
     <input class="input-field login-input" type="password" id="password" placeholder="*****" />
   </div>
   <div class="form-item">
-    <label for="confirm-password">Confirm Password
+    <label htmlFor="confirm-password">Confirm Password
     </label>
     <input class="input-field login-input" type="password" id="confirm-password" placeholder="*****" />
   </div>
