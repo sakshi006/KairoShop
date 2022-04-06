@@ -7,7 +7,7 @@ import { AiTwotoneStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 const ProductCard = ({ item }) => {
-  const { cartProducts, setCartProducts } = useCartContext();
+  const { cartProducts, addToCart } = useCartContext();
   const { wishListState, setWishListState } = useWishListContext();
 
   return (
@@ -74,7 +74,7 @@ const ProductCard = ({ item }) => {
             <button
               className="btn cart-btn"
               onClick={() =>
-                setCartProducts({ type: "ADD_TO_CART", payload: item })
+                addToCart(item)
               }
             >
               Add to Cart

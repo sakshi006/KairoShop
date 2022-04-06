@@ -4,7 +4,7 @@ import { useCartContext ,useWishListContext} from "../../context";
 import { calcPercentage } from "../../Utils";
 
 const CartCard = ({ cartproduct }) => {
-  const { setCartProducts } = useCartContext();
+  const { decrementQty, addToCart, incrementQty  } = useCartContext();
   const { wishListState, setWishListState } = useWishListContext();
 
   return (
@@ -19,14 +19,15 @@ const CartCard = ({ cartproduct }) => {
             <span className="old-price">Rs.{cartproduct.originalPrice}</span>
           </p>
           <span className="discount">
-            Discount :{" "}
+            Discount :
             {calcPercentage(cartproduct.price, cartproduct.originalPrice)}%
           </span>
           <div className="qty-monitor">
             <button
               className="btn qty-btn"
               onClick={() =>
-                setCartProducts({ type: "DECREMENT_QTY", payload: cartproduct })
+               {if(cartproduct.qty>1)
+              decrementQty(cartproduct)}
               }
             >
               -
@@ -35,7 +36,7 @@ const CartCard = ({ cartproduct }) => {
             <button
               className="btn qty-btn"
               onClick={() =>
-                setCartProducts({ type: "INCREMENT_QTY", payload: cartproduct })
+                incrementQty(cartproduct)
               }
             >
               +
@@ -68,10 +69,7 @@ const CartCard = ({ cartproduct }) => {
             <button
               className="btn cart-btn flex-btn remove-cart-btn"
               onClick={() =>
-                setCartProducts({
-                  type: "REMOVE_FROM_CART",
-                  payload: cartproduct,
-                })
+               addToCart(cartproduct)
               }
             >
               <i className="fas fa-shopping-cart"></i>{" "}

@@ -3,7 +3,7 @@ import { BsSearch, BsFillCartFill, BsFillSuitHeartFill } from "react-icons/bs";
 
 import "./Navbar.css";
 
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import { useCartContext,useWishListContext } from "../../context";
 
 const Navbar = () => {
@@ -14,6 +14,12 @@ const Navbar = () => {
   const itemInCartReducer = (prev,curr)=> prev+curr.quantity;
   const totalItemsInCart = cartProducts.cartList.reduce(itemInCartReducer,0)
 
+  const navigate = useNavigate();
+  let token = localStorage.getItem("token");
+  const LogUserOut = () => {
+    localStorage.removeItem("token");
+    navigate("/");
+  };
 
   return (
     <nav className="navbar">
@@ -31,9 +37,17 @@ const Navbar = () => {
         />
       </div>
       <div className="top-links">
-        <Link to="/login">
-          <button className="btn">Login</button>
-        </Link>
+        {!token ? (
+            <>
+            <Link to="/login">
+              <button className="btn">Login</button>
+            </Link>
+             <Link to="/signup">
+             <button className="btn">Signup</button>
+           </Link></>
+          ) : (
+           <Link to="/"> <button onClick={LogUserOut} className="btn">LogOut</button></Link>
+          )}
         <Link to="/productlist">
           <button className="btn">Shop</button>
         </Link>

@@ -15,7 +15,7 @@ const Filter = () => {
   return (
     <div className="filters">
       <input type="checkbox" id="sidebar-check" />
-      <label for="sidebar-check">
+      <label htmlFor="sidebar-check">
         <i className="fas fa-bars" id="sidebar-btn">Filters</i>
         <i className="fas fa-times" id="sidebar-cancel"></i>
       </label>
