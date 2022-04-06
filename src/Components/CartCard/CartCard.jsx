@@ -4,6 +4,7 @@ import { useCartContext ,useWishListContext} from "../../context";
 import { calcPercentage } from "../../Utils";
 
 const CartCard = ({ cartproduct }) => {
+  const token = localStorage.getItem("token")
   const { decrementQty, addToCart, incrementQty  } = useCartContext();
   const { wishListState, addItemtowishlist } = useWishListContext();
 
@@ -66,7 +67,7 @@ const CartCard = ({ cartproduct }) => {
             <button
               className="btn cart-btn flex-btn remove-cart-btn"
               onClick={() =>
-               addToCart(cartproduct)
+               token && addToCart(cartproduct)
               }
             >
               <i className="fas fa-shopping-cart"></i>{" "}

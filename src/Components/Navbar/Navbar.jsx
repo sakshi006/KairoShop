@@ -55,14 +55,25 @@ const Navbar = () => {
         <Link to="/productlist">
           <button className="btn">Shop</button>
         </Link>
-        <Link to="/wishlist" className="child-ecom">
+        {
+          token?  <Link to="/wishlist" className="child-ecom">
           <span className="badgeecom two">{token ? wishListState.wishListArray.length : 0}</span>
           <BsFillSuitHeartFill className="nav-heart" />
-        </Link>
-        <Link to="/cart" className="child-ecom">
+        </Link> :
+         <Link to="/" className="child-ecom">
+         <span className="badgeecom two">{token ? wishListState.wishListArray.length : 0}</span>
+         <BsFillSuitHeartFill className="nav-heart" />
+       </Link>
+        }
+       
+      {token?  <Link to="/cart" className="child-ecom">
           <span className="badgeecom two">{token ? totalItemsInCart : 0}</span>
           <BsFillCartFill className="nav-cart" />
-        </Link>
+        </Link>:
+          <Link to="/" className="child-ecom">
+          <span className="badgeecom two">{token ? totalItemsInCart : 0}</span>
+          <BsFillCartFill className="nav-cart" />
+        </Link>}
       </div>
     </nav>
   );

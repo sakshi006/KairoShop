@@ -14,17 +14,19 @@ const WishListProvider = ({ children }) => {
 
 
   const getWishlist = async () => {
+   if(token){
     try {
-      const response = await axios("/api/user/wishlist", {
-        headers: { authorization: token },
-      });
-      setWishListState({
-        type: "ADD_TO_WISHLIST",
-        payload: response.data.wishlist,
-      });
-    } catch (err) {
-      console.error(err, "getwishlist");
-    }
+        const response = await axios("/api/user/wishlist", {
+          headers: { authorization: token },
+        });
+        setWishListState({
+          type: "ADD_TO_WISHLIST",
+          payload: response.data.wishlist,
+        });
+      } catch (err) {
+        console.error(err, "getwishlist");
+      }
+   }
   };
 
   const addItemtowishlist = async (item) => {

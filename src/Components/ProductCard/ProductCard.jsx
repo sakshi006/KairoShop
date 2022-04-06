@@ -25,10 +25,9 @@ const ProductCard = ({ item }) => {
             <i
               className="fas fa-heart red-heart"
               onClick={() =>
-                addItemtowishlist(item)
+               token && addItemtowishlist(item)
               }
             >
-              {" "}
             </i>
           </span>
         ) : (
@@ -39,7 +38,6 @@ const ProductCard = ({ item }) => {
                 addItemtowishlist(item)
               }
             >
-              {" "}
             </i>
           </span>
         )}
