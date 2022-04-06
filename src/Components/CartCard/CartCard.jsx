@@ -5,7 +5,7 @@ import { calcPercentage } from "../../Utils";
 
 const CartCard = ({ cartproduct }) => {
   const { decrementQty, addToCart, incrementQty  } = useCartContext();
-  const { wishListState, setWishListState } = useWishListContext();
+  const { wishListState, addItemtowishlist } = useWishListContext();
 
   return (
     <div className="cart-component">
@@ -56,10 +56,7 @@ const CartCard = ({ cartproduct }) => {
               <button
                 className="btn cart-btn flex-btn wishlist-btn"
                 onClick={() =>
-                  setWishListState({
-                    type: "ADD_TO_WISHLIST",
-                    payload: cartproduct,
-                  })
+                  addItemtowishlist(cartproduct)
                 }
               >
                 <i className="fas fa-heart"></i>

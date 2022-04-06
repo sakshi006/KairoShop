@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const ProductCard = ({ item }) => {
   const { cartProducts, addToCart } = useCartContext();
-  const { wishListState, setWishListState } = useWishListContext();
+  const { wishListState, addItemtowishlist } = useWishListContext();
   const token = localStorage.getItem("token")
 
 
@@ -25,10 +25,7 @@ const ProductCard = ({ item }) => {
             <i
               className="fas fa-heart red-heart"
               onClick={() =>
-                setWishListState({
-                  type: "REMOVE_FROM_WISHLIST",
-                  payload: item,
-                })
+                addItemtowishlist(item)
               }
             >
               {" "}
@@ -39,7 +36,7 @@ const ProductCard = ({ item }) => {
             <i
               className="fas fa-heart grey-heart"
               onClick={() =>
-                setWishListState({ type: "ADD_TO_WISHLIST", payload: item })
+                addItemtowishlist(item)
               }
             >
               {" "}
