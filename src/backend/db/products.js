@@ -7,8 +7,7 @@ import { v4 as uuid } from "uuid";
 
 export const products = [
   {
-    id:1,
-    _id: uuid(),
+    _id: "4575d6d2-a844-4456-8f75-be71447681f9",
     img:"https://images-na.ssl-images-amazon.com/images/I/41y2KJ+kDLL._SY344_BO1,204,203,200_.jpg",
     title: "You Can WIN",
     author: "Shiv Khera",
@@ -19,8 +18,7 @@ export const products = [
     rating: 4.7,
   },
   {
-    id:2,
-    _id: uuid(),
+    _id: "bd13ebb2-c2ec-44bd-9c8f-7c162eaeaf00",
     img:"https://images-na.ssl-images-amazon.com/images/I/41y2KJ+kDLL._SY344_BO1,204,203,200_.jpg",
     title: "A Touch of Eternity",
     author: "Datta Durjoy",
@@ -31,8 +29,7 @@ export const products = [
     rating: 4,
   },
   {
-    id:3,
-    _id:uuid(),
+    _id:"0ab978e5-c77d-4e7d-8d6a-407c1b62b8e7",
     img:"https://m.media-amazon.com/images/I/81b1PP4RK1L._AC_UY327_FMwebp_QL65_.jpg",
     title: "That Night: Four Friends. ",
     author: "Nidhi Upadhyay ",
@@ -43,8 +40,7 @@ export const products = [
     rating: 4.3,
   },
   {
-    id:4,
-    _id: uuid(),
+    _id:"533fc1cd-1e28-4cb5-a192-4a7a23c52c2e",
     title: "You are Winner",
     img:"https://images-eu.ssl-images-amazon.com/images/I/517sWS8zu0L._SY264_BO1,204,203,200_QL40_FMwebp_.jpg",
     author: "Junaid Qureshi",
@@ -55,8 +51,7 @@ export const products = [
     rating: 4.0,
   },
   {
-    id:5,
-    _id: uuid(),
+    _id:"9be738f1-44ee-44dc-b711-346f200a7a1c",
     title: "Think and Grow Rich",
     img:"https://m.media-amazon.com/images/I/61b5aPmEhzL._AC_UY327_FMwebp_QL65_.jpg",
     author: "Shiv Khera",
@@ -67,8 +62,7 @@ export const products = [
     rating: 3.6,
   },
   {
-    id:6,
-    _id: uuid(),
+    _id: "e73f37e3-45e5-468d-b062-8408f34d8123",
     img: "https://rukminim1.flixcart.com/image/612/612/kwxv98w0/book/l/z/y/do-epic-shit-original-imag9gcfcwfvwtep.jpeg?q=70",
     title: "Do Epic Shit",
     author: "Ankur Warikoo",
@@ -79,8 +73,7 @@ export const products = [
     rating: 4.6,
     },
   {
-    id:7,
-    _id: uuid(),
+    _id: "12bb4058-415e-40e2-a155-e3d3fb0f958e",
     img: "https://rukminim1.flixcart.com/image/612/612/jpu324w0/book/0/9/0/believe-in-yourself-original-imafbzz2h7yfg5zz.jpeg?q=70",
     title: "Believe In Yourself",
     author: "Joseph",
@@ -92,8 +85,7 @@ export const products = [
     },
 
   {
-    id:8,
-    _id: uuid(),
+    _id: "cc7acfb8-e154-465a-bb26-715e94889182",
     img: "https://rukminim1.flixcart.com/image/612/612/kokdci80/regionalbooks/t/x/c/zero-to-one-original-imag2zzngtfasecu.jpeg?q=70",
     title: "Zero To One",
     author: "Peter Thiel",
@@ -104,8 +96,7 @@ export const products = [
     rating: 2,
     },
   {
-    id:9,
-    _id: uuid(),
+    _id:"0d885a40-7c14-4f44-90ce-2e223619a7ec",
     img: "https://d3i5mgdwi2ze58.cloudfront.net/hwi2qqngyicqz7s7ps4x4k1ei14k",
     title: "Atomic Habits",
     author: "James Clear",
@@ -117,8 +108,7 @@ export const products = [
     },
 
   {
-    id:10,
-    _id: uuid(),
+    _id:"1166650f-fc19-4d3b-82a7-bfcfe581cb23",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTvrBNWlYmmsa_2M3BaJdurD9lve0SdNLAIA&usqp=CAU",
     title: "IKIGAI",
     author: "I dont Know",
@@ -129,8 +119,7 @@ export const products = [
     rating: 4,
     },
   {
-    id:11,
-    _id: uuid(),
+    _id:"0ac420de-7063-49fe-904a-402c33551fbd",
     img: "https://rukminim1.flixcart.com/image/612/612/kgwld3k0/book/1/9/4/rich-dad-poor-dad-original-imafxf885pytvycy.jpeg?q=70",
     title: "Rich Dad Poor Dad",
     author: "Robert Kiyoski",
@@ -141,8 +130,7 @@ export const products = [
     rating: 2,
     },
   {
-    id:12,
-    _id: uuid(),
+    _id:"c670a438-d2be-4ac1-93d6-9f4aa9134177",
     img: "https://rukminim1.flixcart.com/image/612/612/kirr24w0-0/book/k/k/g/the-monk-who-sold-his-ferrari-original-imafyhgacv9jrgv7.jpeg?q=70",
     title: "Monk Who Sold His Ferrari",
     author: "Robin Sharma",
@@ -153,8 +141,7 @@ export const products = [
     rating: 3,
     },
   {
-    id:13,
-    _id: uuid(),
+    _id:"151fa9cd-0018-4a5f-9989-22ce7a7ed024",
     img: "https://rukminim1.flixcart.com/image/612/612/ki96c280-0/book/3/p/n/one-indian-girl-original-imafy2zrymfbtygz.jpeg?q=70",
     title: "One Indian Girl",
     author: "Chetan Bhagat",
@@ -165,8 +152,7 @@ export const products = [
     rating: 3,
     },
   {
-    id:14,
-    _id: uuid(),
+    _id: "c8f57f93-b764-4c2a-af94-78d0c743777f",
     img: "https://rukminim1.flixcart.com/image/612/612/kjbr8280-0/book/z/r/9/learning-how-to-fly-original-imafyx6zuhvfhv94.jpeg?q=70",
     title: "Learning How To Fly",
     author: "A.P.J Abdul Kalam",
@@ -177,8 +163,7 @@ export const products = [
     rating: 2.5,
     },
   {
-    id:15,
-    _id: uuid(),
+    _id:"3f6d0fc6-4cd8-46c2-8821-eeaa408133ad",
     img: "https://rukminim1.flixcart.com/image/612/612/kwpam4w0/book/r/a/r/-original-imag9bv6bzstsjgk.jpeg?q=70",
     title: "400 Days",
     author: "Chetan Bhagat",
@@ -189,8 +174,7 @@ export const products = [
     rating: 4,
     },
   {
-    id:16,
-    _id: uuid(),
+    _id: "543cabe9-cc0f-4623-bcf0-09f08b4a4fd0",
     img: "https://rukminim1.flixcart.com/image/612/612/khxqt8w0-0/book/x/o/v/attitude-is-everything-change-your-attitude-change-your-life-original-imafxtvesfbk8rje.jpeg?q=70",
     title: "Attitude Is Everything",
     author: "Keller Jeff",
@@ -201,8 +185,7 @@ export const products = [
     rating: 3.5,
     },
   {
-    id:17,
-    _id: uuid(),
+    _id: "d0d3dff1-bcea-46bd-ae4f-8445d3a0a4c0",
     img: "https://rukminim1.flixcart.com/image/612/612/kufuikw0/book/p/3/d/man-s-search-for-meaning-original-imag7kerxrpweqj9.jpeg?q=70",
     title: "Man's Search For Meaning",
     author: "Franky Viktor",

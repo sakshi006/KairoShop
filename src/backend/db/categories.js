@@ -8,20 +8,26 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
-    categoryName: "fiction",
+    img: "https://rukminim1.flixcart.com/image/612/612/kufuikw0/book/p/3/d/man-s-search-for-meaning-original-imag7kerxrpweqj9.jpeg?q=70",
+    name: "Man's Search For Meaning",
     description:
-      "literature in the form of prose, especially novels, that describes imaginary events and people",
+      "Frankl's Man's Search for Meaning provides a vivid account of an individual's experience as a prisoner in a Nazi concentration camp.",
+    categoryName: "Non Fiction",
   },
   {
     _id: uuid(),
-    categoryName: "non-fiction",
+    img: "https://rukminim1.flixcart.com/image/612/612/jpu324w0/book/0/9/0/believe-in-yourself-original-imafbzz2h7yfg5zz.jpeg?q=70",
+    name: "Believe In Yourself",
     description:
-      "Non-fiction is writing that gives information or describes real events, rather than telling a story.",
+      "Dr. Murphy stresses about having faith in ones abilities, believing in the inner self and in having the courage to chase your dream.",
+    categoryName: "Self Help",
   },
   {
     _id: uuid(),
-    categoryName: "horror",
+    img: "https://rukminim1.flixcart.com/image/612/612/kjbr8280-0/book/z/r/9/learning-how-to-fly-original-imafyx6zuhvfhv94.jpeg?q=70",
+    name: "Learning How To Fly",
     description:
-      "Meant to cause discomfort and fear for both the character and readers, horror writers often make use of supernatural and paranormal elements in morbid stories that are sometimes a little too realistic.",
+      "Through stories from his own life, those of his teachers and mentors as well as stories of some of the greatest men and women of the world and the latest developments.",
+    categoryName: "Fiction",
   },
 ];

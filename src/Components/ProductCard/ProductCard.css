@@ -46,6 +46,7 @@
   
   .product-card-image{
     height: 16rem;
+    width: -webkit-fill-available
 }
   
 .product-detail .footer{
@@ -90,4 +91,9 @@
   
 .cart-remove{
   background-color: var(--secondary);
+}
+
+.single-product-link{
+  text-decoration: none;
+  color: var(--font);
 }

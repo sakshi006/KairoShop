@@ -4,15 +4,17 @@ import { BsSearch, BsFillCartFill, BsFillSuitHeartFill } from "react-icons/bs";
 import "./Navbar.css";
 
 import { Link,useNavigate } from "react-router-dom";
-import { useCartContext,useWishListContext } from "../../context";
+import { useCartContext,useFilter,useWishListContext } from "../../context";
 
 const Navbar = () => {
   const [searchValue, setSearchValue] = useState();
   const {cartProducts} = useCartContext()
   const {wishListState} = useWishListContext();
+  const {dispatch} = useFilter();
 
   const itemInCartReducer = (prev,curr)=> prev+curr.quantity;
   const totalItemsInCart = cartProducts.cartList.reduce(itemInCartReducer,0)
+  
 
   const navigate = useNavigate();
   let token = localStorage.getItem("token");
@@ -22,9 +24,11 @@ const Navbar = () => {
   };
 
   return (
+
+
     <nav className="navbar">
       <h2 className="logo">
-        <Link to="/">KairoShop</Link>
+        <Link onClick={()=>dispatch({type:"CLEAR"})} to="/">KairoShop</Link>
       </h2>
       <div className="input-container">
         <BsSearch className="fas fa-search icon" />

@@ -44,10 +44,11 @@ const ProductCard = ({ item }) => {
             </i>
           </span>
         )}
-        <img className="product-card-image" src={item.img} alt={item.title} />
+       <Link className="single-product-link" to={`/product/${item.id}`}>
+       <img className="product-card-image" src={item.img} alt={item.title} /></Link>
         <div className="product-detail">
-          <strong>{item.title}</strong>
-          <p>{item.author}</p>
+        <Link className="single-product-link" to={`/product/${item._id}`}><strong>{item.title}</strong>
+          <p>{item.author}</p></Link>
 
           <div className="footer">
             <p className="price">

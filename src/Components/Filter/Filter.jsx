@@ -137,7 +137,7 @@ const Filter = () => {
                 name="nonfiction"
                 value="nonfiction"
                 checked={nonFiction}
-                onChange={() => dispatch({ type: "NON_FICTION" })}
+                onChange={() => dispatch({ type: "NON FICTION" })}
               />
               Non Fiction
             </label>
@@ -150,7 +150,7 @@ const Filter = () => {
                 name="selfhelp"
                 value="selfhelp"
                 checked={selfHelp}
-                onChange={() => dispatch({ type: "SELF_HELP" })}
+                onChange={() => dispatch({ type: "SELF HELP" })}
               />
               Self Help
             </label>
