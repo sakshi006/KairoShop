@@ -60,7 +60,7 @@ const Navbar = () => {
           <span className="badgeecom two">{token ? wishListState.wishListArray.length : 0}</span>
           <BsFillSuitHeartFill className="nav-heart" />
         </Link> :
-         <Link to="/" className="child-ecom">
+         <Link to="/login" className="child-ecom">
          <span className="badgeecom two">{token ? wishListState.wishListArray.length : 0}</span>
          <BsFillSuitHeartFill className="nav-heart" />
        </Link>
@@ -70,7 +70,7 @@ const Navbar = () => {
           <span className="badgeecom two">{token ? totalItemsInCart : 0}</span>
           <BsFillCartFill className="nav-cart" />
         </Link>:
-          <Link to="/" className="child-ecom">
+          <Link to="/login" className="child-ecom">
           <span className="badgeecom two">{token ? totalItemsInCart : 0}</span>
           <BsFillCartFill className="nav-cart" />
         </Link>}

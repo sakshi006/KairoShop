@@ -11,9 +11,11 @@ const CartContextProvider = ({ children }) => {
   let token = localStorage.getItem("token");
   const [cartProducts, setCartProducts] = useReducer(cartReducerFunction, {
     cart: [],
-  });
+    loading:false
+  }); 
 
   const getCartData = async () => {
+    setCartProducts({type:"API_REQUEST"});
     try {
       const response = await axios.get("/api/user/cart", {
         headers: { authorization: token },
@@ -21,6 +23,7 @@ const CartContextProvider = ({ children }) => {
       setCartProducts({
         type: "ADD_TO_CART",
         payload: response.data.cart,
+        loading:false,
       });
     } catch (error) {
       setCartProducts({ type: "ERROR_HANDLE" });
@@ -28,6 +31,7 @@ const CartContextProvider = ({ children }) => {
   };
 
   const addToCart = async (item) => {
+    setCartProducts({type:"API_REQUEST"});
     const findIndex = cartProducts.cart.findIndex(
       (prod) => prod._id === item._id
     );
@@ -53,6 +57,7 @@ const CartContextProvider = ({ children }) => {
         });
         setCartProducts({ type: "ADD_TO_CART", payload: response.data.cart });
       } catch (error) {
+        console.error(error.response.data);
         setCartProducts({ type: "ERROR_HANDLE" });
       }
     }
@@ -60,7 +65,7 @@ const CartContextProvider = ({ children }) => {
 
   const incrementQty = async (item) => {
     try {
-      const res = await axios.post(
+      const response = await axios.post(
         `/api/user/cart/${item._id}`,
         {
           action: { type: "increment" },
@@ -69,7 +74,7 @@ const CartContextProvider = ({ children }) => {
           headers: { authorization: token },
         }
       );
-      setCartProducts({ type: "INCREMENT_QTY", payload: res.data.cart });
+      setCartProducts({ type: "INCREMENT_QTY", payload: response.data.cart });
     } catch (error) {
       console.error(error,"incrementQty");
     }
@@ -77,7 +82,7 @@ const CartContextProvider = ({ children }) => {
 
   const decrementQty = async (item) => {
     try {
-      const res = await axios.post(
+      const response = await axios.post(
         `/api/user/cart/${item._id}`,
         {
           action: { type: "decrement" },
@@ -86,7 +91,7 @@ const CartContextProvider = ({ children }) => {
           headers: { authorization: token },
         }
       );
-      setCartProducts({ type: "DECREMENT_QTY", payload: res.data.cart });
+      setCartProducts({ type: "DECREMENT_QTY", payload: response.data.cart });
     } catch (error) {
       console.error(error,"decrementQty");
     }

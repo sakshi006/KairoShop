@@ -5,8 +5,10 @@ import Navbar from "./Components/Navbar/Navbar";
 import { Footer } from "./Components/Footer/Footer";
 import { Home, Signup, Login, WishList, Cart, ProductList, NotFound } from "./Pages";
 import SingleProduct from "./Pages/SingleProduct/SingleProduct";
+import { Notify } from "./Components/Notify";
 
 function App() {
+  const msg="yaya"
   return (
     <div className="App">
       <Navbar />

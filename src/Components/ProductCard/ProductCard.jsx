@@ -4,9 +4,10 @@ import "./ProductCard.css";
 import { calcPercentage } from "../../Utils/discountCalculator";
 
 import { AiTwotoneStar } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 const ProductCard = ({ item }) => {
+  const navigate = useNavigate();
   const { cartProducts, addToCart } = useCartContext();
   const { wishListState, addItemtowishlist } = useWishListContext();
   const token = localStorage.getItem("token")
@@ -20,22 +21,30 @@ const ProductCard = ({ item }) => {
         ) : null}
         {wishListState.wishListArray.find(
           (product) => product._id === item._id
-        ) ? (
+        ) ? (token ? <span className="fav">
+        <i
+          className="fas fa-heart red-heart"
+          onClick={() =>
+           token ? addItemtowishlist(item) : navigate("/login")
+          }
+        >
+        </i>
+      </span> : (
           <span className="fav">
             <i
-              className="fas fa-heart red-heart"
-              onClick={() =>
-               token && addItemtowishlist(item)
+              className="fas fa-heart grey-heart"
+              onClick={() => navigate("/login")
               }
             >
             </i>
           </span>
+      )
         ) : (
           <span className="fav">
             <i
               className="fas fa-heart grey-heart"
               onClick={() =>
-                addItemtowishlist(item)
+                token ? addItemtowishlist(item) : navigate("/login")
               }
             >
             </i>
@@ -68,13 +77,13 @@ const ProductCard = ({ item }) => {
            token ? <Link to="/cart">
               <button className="btn cart-remove cart-btn ">Go To Cart</button>
             </Link> :<Link to="/login">
-              <button className="btn cart-remove cart-btn ">Go To Cart</button>
+              <button className="btn cart-btn ">Add To Cart</button>
             </Link>
           ) : (
             <button
               className="btn cart-btn"
               onClick={() =>
-               token && addToCart(item)
+               token ? addToCart(item): navigate("/login")
               }
             >
               Add to Cart
