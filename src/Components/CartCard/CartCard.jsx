@@ -4,8 +4,9 @@ import { useCartContext ,useWishListContext} from "../../context";
 import { calcPercentage } from "../../Utils";
 
 const CartCard = ({ cartproduct }) => {
-  const { setCartProducts } = useCartContext();
-  const { wishListState, setWishListState } = useWishListContext();
+  const token = localStorage.getItem("token")
+  const { decrementQty, addToCart, incrementQty  } = useCartContext();
+  const { wishListState, addItemtowishlist } = useWishListContext();
 
   return (
     <div className="cart-component">
@@ -19,23 +20,24 @@ const CartCard = ({ cartproduct }) => {
             <span className="old-price">Rs.{cartproduct.originalPrice}</span>
           </p>
           <span className="discount">
-            Discount :{" "}
+            Discount :
             {calcPercentage(cartproduct.price, cartproduct.originalPrice)}%
           </span>
           <div className="qty-monitor">
             <button
               className="btn qty-btn"
               onClick={() =>
-                setCartProducts({ type: "DECREMENT_QTY", payload: cartproduct })
+               {if(cartproduct.qty>1)
+              decrementQty(cartproduct)}
               }
             >
               -
             </button>
-            <span className="qty-display">{cartproduct.quantity}</span>
+            <span className="qty-display">{cartproduct.qty}</span>
             <button
               className="btn qty-btn"
               onClick={() =>
-                setCartProducts({ type: "INCREMENT_QTY", payload: cartproduct })
+                incrementQty(cartproduct)
               }
             >
               +
@@ -55,10 +57,7 @@ const CartCard = ({ cartproduct }) => {
               <button
                 className="btn cart-btn flex-btn wishlist-btn"
                 onClick={() =>
-                  setWishListState({
-                    type: "ADD_TO_WISHLIST",
-                    payload: cartproduct,
-                  })
+                  addItemtowishlist(cartproduct)
                 }
               >
                 <i className="fas fa-heart"></i>
@@ -68,10 +67,7 @@ const CartCard = ({ cartproduct }) => {
             <button
               className="btn cart-btn flex-btn remove-cart-btn"
               onClick={() =>
-                setCartProducts({
-                  type: "REMOVE_FROM_CART",
-                  payload: cartproduct,
-                })
+               token && addToCart(cartproduct)
               }
             >
               <i className="fas fa-shopping-cart"></i>{" "}

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useCartContext, useProductContext } from "../../context";
 import { AiOutlineCheck,AiOutlineArrowLeft } from "react-icons/ai";
 import "./SingleProduct.css";
@@ -7,9 +7,12 @@ import "./SingleProduct.css";
 const SingleProduct = () => {
   const { productid } = useParams();
   const { products } = useProductContext();
-  const {setCartProducts} = useCartContext();
+  const {cartProducts,addToCart} = useCartContext();
+  const navigate = useNavigate();
+  const token = localStorage.getItem("token")
 
-  const singleProduct = products.find((item) => item.id === productid);
+  const singleProduct = products.find((item) => item._id === productid);
+
 
   return (
     <div className="single-product content">
@@ -54,9 +57,9 @@ const SingleProduct = () => {
             </p>
           </div>
           <button onClick={() =>
-                setCartProducts({ type: "ADD_TO_CART", payload: singleProduct })
+               token ?  (addToCart(singleProduct)): navigate("/login")
               } className="btn cart-btn">
-            Buy now for ₹{singleProduct.price}
+                 { cartProducts.cart.find(prod=> prod._id===singleProduct._id)?<p> Remove From Cart</p>:<p>Buy now for ₹{singleProduct.price}</p> }
           </button>
         </div>
       </div>

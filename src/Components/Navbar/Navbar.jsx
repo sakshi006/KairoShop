@@ -3,7 +3,7 @@ import { BsSearch, BsFillCartFill, BsFillSuitHeartFill } from "react-icons/bs";
 
 import "./Navbar.css";
 
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import { useCartContext,useFilter,useWishListContext } from "../../context";
 
 const Navbar = () => {
@@ -12,10 +12,16 @@ const Navbar = () => {
   const {wishListState} = useWishListContext();
   const {dispatch} = useFilter();
 
-  const itemInCartReducer = (prev,curr)=> prev+curr.quantity;
-  const totalItemsInCart = cartProducts.cartList.reduce(itemInCartReducer,0)
+  const itemInCartReducer = (prev,curr)=> prev+curr.qty;
+  const totalItemsInCart = cartProducts.cart.reduce(itemInCartReducer,0)
   
 
+  const navigate = useNavigate();
+  let token = localStorage.getItem("token");
+  const LogUserOut = () => {
+    localStorage.removeItem("token");
+    navigate("/");
+  };
 
   return (
 
@@ -35,20 +41,39 @@ const Navbar = () => {
         />
       </div>
       <div className="top-links">
-        <Link to="/login">
-          <button className="btn">Login</button>
-        </Link>
+        {!token ? (
+            <>
+            <Link to="/login">
+              <button className="btn">Login</button>
+            </Link>
+             <Link to="/signup">
+             <button className="btn">Signup</button>
+           </Link></>
+          ) : (
+           <Link to="/"> <button onClick={LogUserOut} className="btn">LogOut</button></Link>
+          )}
         <Link to="/productlist">
           <button className="btn">Shop</button>
         </Link>
-        <Link to="/wishlist" className="child-ecom">
-          <span className="badgeecom two">{ wishListState.wishListArray.length}</span>
+        {
+          token?  <Link to="/wishlist" className="child-ecom">
+          <span className="badgeecom two">{token ? wishListState.wishListArray.length : 0}</span>
           <BsFillSuitHeartFill className="nav-heart" />
-        </Link>
-        <Link to="/cart" className="child-ecom">
-          <span className="badgeecom two">{totalItemsInCart}</span>
+        </Link> :
+         <Link to="/login" className="child-ecom">
+         <span className="badgeecom two">{token ? wishListState.wishListArray.length : 0}</span>
+         <BsFillSuitHeartFill className="nav-heart" />
+       </Link>
+        }
+       
+      {token?  <Link to="/cart" className="child-ecom">
+          <span className="badgeecom two">{token ? totalItemsInCart : 0}</span>
           <BsFillCartFill className="nav-cart" />
-        </Link>
+        </Link>:
+          <Link to="/login" className="child-ecom">
+          <span className="badgeecom two">{token ? totalItemsInCart : 0}</span>
+          <BsFillCartFill className="nav-cart" />
+        </Link>}
       </div>
     </nav>
   );

@@ -1,14 +1,16 @@
 import React from "react";
-import { useCartContext,useWishListContext } from "../../context";
+import { useCartContext, useWishListContext } from "../../context";
 import "./ProductCard.css";
 import { calcPercentage } from "../../Utils/discountCalculator";
 
 import { AiTwotoneStar } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ProductCard = ({ item }) => {
-  const { cartProducts, setCartProducts } = useCartContext();
-  const { wishListState, setWishListState } = useWishListContext();
+  const navigate = useNavigate();
+  const { cartProducts, addToCart } = useCartContext();
+  const { wishListState, addItemtowishlist } = useWishListContext();
+  const token = localStorage.getItem("token");
 
   return (
     <div className="grid-item">
@@ -17,38 +19,43 @@ const ProductCard = ({ item }) => {
           <span className="update-badge">BestSeller</span>
         ) : null}
         {wishListState.wishListArray.find(
-          (product) => product.id === item.id
+          (product) => product._id === item._id
         ) ? (
-          <span className="fav">
-            <i
-              className="fas fa-heart red-heart"
-              onClick={() =>
-                setWishListState({
-                  type: "REMOVE_FROM_WISHLIST",
-                  payload: item,
-                })
-              }
-            >
-              {" "}
-            </i>
-          </span>
+          token ? (
+            <span className="fav">
+              <i
+                className="fas fa-heart red-heart"
+                onClick={() =>
+                  token ? addItemtowishlist(item) : navigate("/login")
+                }
+              ></i>
+            </span>
+          ) : (
+            <span className="fav">
+              <i
+                className="fas fa-heart grey-heart"
+                onClick={() => navigate("/login")}
+              ></i>
+            </span>
+          )
         ) : (
           <span className="fav">
             <i
               className="fas fa-heart grey-heart"
               onClick={() =>
-                setWishListState({ type: "ADD_TO_WISHLIST", payload: item })
+                token ? addItemtowishlist(item) : navigate("/login")
               }
-            >
-              {" "}
-            </i>
+            ></i>
           </span>
         )}
-       <Link className="single-product-link" to={`/product/${item.id}`}>
-       <img className="product-card-image" src={item.img} alt={item.title} /></Link>
+        <Link className="single-product-link" to={`/product/${item._id}`}>
+          <img className="product-card-image" src={item.img} alt={item.title} />
+        </Link>
         <div className="product-detail">
-        <Link className="single-product-link" to={`/product/${item.id}`}><strong>{item.title}</strong>
-          <p>{item.author}</p></Link>
+          <Link className="single-product-link" to={`/product/${item._id}`}>
+            <strong>{item.title}</strong>
+            <p>{item.author}</p>
+          </Link>
 
           <div className="footer">
             <p className="price">
@@ -67,16 +74,22 @@ const ProductCard = ({ item }) => {
               <AiTwotoneStar />
             </span>
           </div>
-          {cartProducts.cartList.find((cartItem) => cartItem.id === item.id) ? (
-            <Link to="/cart">
-              <button className="btn cart-remove cart-btn ">Go To Cart</button>
-            </Link>
+          {cartProducts.cart.find((cartItem) => cartItem._id === item._id) ? (
+            token ? (
+              <Link to="/cart">
+                <button className="btn cart-remove cart-btn ">
+                  Go To Cart
+                </button>
+              </Link>
+            ) : (
+              <Link to="/login">
+                <button className="btn cart-btn ">Add To Cart</button>
+              </Link>
+            )
           ) : (
             <button
               className="btn cart-btn"
-              onClick={() =>
-                setCartProducts({ type: "ADD_TO_CART", payload: item })
-              }
+              onClick={() => (token ? addToCart(item) : navigate("/login"))}
             >
               Add to Cart
             </button>

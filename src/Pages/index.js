@@ -1,5 +1,7 @@
 export  { Home } from "./Home/Home"
 export {Login} from "./Authentication/Login"
+export {Signup} from "./Authentication/Signup"
 export {Cart} from "./Cart/Cart"
 export {WishList } from "./WishList/WishList"
 export {ProductList} from "./ProductList/ProductList"
+export {NotFound} from "./NotFound"
