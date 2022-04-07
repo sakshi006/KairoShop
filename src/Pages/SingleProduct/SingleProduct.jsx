@@ -7,7 +7,7 @@ import "./SingleProduct.css";
 const SingleProduct = () => {
   const { productid } = useParams();
   const { products } = useProductContext();
-  const {setCartProducts, addToCart} = useCartContext();
+  const {addToCart} = useCartContext();
   const navigate = useNavigate();
   const token = localStorage.getItem("token")
 
