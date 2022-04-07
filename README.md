@@ -9,6 +9,7 @@ The basic features that the website offers are listed below :
 2. If the user clicks on any one of the categories they will be redirected to the product list page with the selected category.
 
 
+
 ### Product Listing Page
 
 1. User can see a product listing page where all the products are listed with a section of filters.
@@ -24,6 +25,13 @@ The basic features that the website offers are listed below :
      1. Add to Cart: User can click on the "Add to Cart" primary button which will add the item to the cart & once added shows "Go to Cart" on the product card.
      2. Add to Wishlist: User can click on a "Wishlist" secondary icon button where if I click adds the item in the wishlist & vice-versa.
      
+     
+     
+### Product Detail Page
+
+1. If the user clicks on any product he is redirected to a single product page with all details & the "Add to Cart" button.
+
+
 
 ### Cart Management
 
@@ -32,10 +40,12 @@ The basic features that the website offers are listed below :
 3. User can also see the price details card of the cart containing a button to checkout which will show the total price of the products with its quantity.
 
 
+
 ### Wishlist Management
 
 1. From the navbar, User can navigate to his/her wishlist where all the products that they would like to buy are mentioned.
 2. On the product card, User can remove the item from the wishlist and add the item to the cart.
+
 
 
 ### Sign-up Page
@@ -44,9 +54,11 @@ The basic features that the website offers are listed below :
 2. User can see a hide-show icon button that shows or hides my password.
 
 
+
 ### Login Page
 
 1. User can see a login page from where he/she can log in using email & password.
+
 
 
 ### Logout
