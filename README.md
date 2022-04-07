@@ -1,4 +1,63 @@
-# Getting Started with Create React App
+## KairoShop is an online shopping website/ e-commerce website specifically for books.
+(The site is still under construction)
+
+The basic features that the website offers are listed below : 
+
+### Home Page
+
+1. User can see a landing page with a list of featured categories.
+2. If the user clicks on any one of the categories they will be redirected to the product list page with the selected category.
+
+
+### Product Listing Page
+
+1. User can see a product listing page where all the products are listed with a section of filters.
+2. User can see multiple filters on the product listing page including,
+     a) Sort By: 
+           which includes : A radio button to sort products based on prices, book title and ratings from low to high & high to low.
+     b) Best Sellers
+     c) Category: A checkbox with various categories according to the theme (Fiction, Non-Fiction, Self Help, Romance, Horror).
+     d) Price: A slider for Price range.
+ 
+3. User can see a button to clear filters from where they can clear all the applied filters.
+4. On the product cards, user can see two call-to-action buttons,
+     a) Add to Cart: User can click on the "Add to Cart" primary button which will add the item to the cart & once added shows "Go to Cart" on the product card.
+     b) Add to Wishlist: User can click on a "Wishlist" secondary icon button where if I click adds the item in the wishlist & vice-versa.
+     
+
+### Cart Management
+
+1. From the navbar, User can navigate to the cart where all the products that the user wants to buy are mentioned.
+2. On the product card, user can see the quantity of a particular product. User can Increase or Decrease the quantity of a particular product, Remove the product from    the cart, Add the product to the Wishlist.
+3. User can also see the price details card of the cart containing a button to checkout which will show the total price of the products with its quantity.
+
+
+### Wishlist Management
+
+1. From the navbar, User can navigate to his/her wishlist where all the products that they would like to buy are mentioned.
+2. On the product card, User can remove the item from the wishlist and add the item to the cart.
+
+
+### Sign-up Page
+
+1. User can see a sign-up page from where user can sign-up using email, first name, last name, password & confirm password.
+2. User can see a hide-show icon button that shows or hides my password.
+
+
+### Login Page
+
+1. User can see a login page from where he/she can log in using email & password.
+
+
+### Logout
+
+1. User can see a logout button from where he/she can log out from the app on the header navbar.
+
+
+
+
+
+### Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
