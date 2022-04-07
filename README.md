@@ -13,16 +13,16 @@ The basic features that the website offers are listed below :
 
 1. User can see a product listing page where all the products are listed with a section of filters.
 2. User can see multiple filters on the product listing page including,
-     a) Sort By: 
+     1. Sort By: 
            which includes : A radio button to sort products based on prices, book title and ratings from low to high & high to low.
-     b) Best Sellers
-     c) Category: A checkbox with various categories according to the theme (Fiction, Non-Fiction, Self Help, Romance, Horror).
-     d) Price: A slider for Price range.
+     2. Best Sellers
+     3. Category: A checkbox with various categories according to the theme (Fiction, Non-Fiction, Self Help, Romance, Horror).
+     4. Price: A slider for Price range.
  
 3. User can see a button to clear filters from where they can clear all the applied filters.
 4. On the product cards, user can see two call-to-action buttons,
-     a) Add to Cart: User can click on the "Add to Cart" primary button which will add the item to the cart & once added shows "Go to Cart" on the product card.
-     b) Add to Wishlist: User can click on a "Wishlist" secondary icon button where if I click adds the item in the wishlist & vice-versa.
+     1. Add to Cart: User can click on the "Add to Cart" primary button which will add the item to the cart & once added shows "Go to Cart" on the product card.
+     2. Add to Wishlist: User can click on a "Wishlist" secondary icon button where if I click adds the item in the wishlist & vice-versa.
      
 
 ### Cart Management
