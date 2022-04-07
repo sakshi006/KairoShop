@@ -7,7 +7,7 @@ import "./SingleProduct.css";
 const SingleProduct = () => {
   const { productid } = useParams();
   const { products } = useProductContext();
-  const {addToCart} = useCartContext();
+  const {cartProducts,addToCart} = useCartContext();
   const navigate = useNavigate();
   const token = localStorage.getItem("token")
 
@@ -57,9 +57,9 @@ const SingleProduct = () => {
             </p>
           </div>
           <button onClick={() =>
-               token ? addToCart(singleProduct): navigate("/login")
+               token ?  (addToCart(singleProduct)): navigate("/login")
               } className="btn cart-btn">
-            Buy now for ₹{singleProduct.price}
+                 { cartProducts.cart.find(prod=> prod._id===singleProduct._id)?<p> Remove From Cart</p>:<p>Buy now for ₹{singleProduct.price}</p> }
           </button>
         </div>
       </div>
