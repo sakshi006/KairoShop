@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useCartContext, useProductContext } from "../../context";
 import { AiOutlineCheck,AiOutlineArrowLeft } from "react-icons/ai";
 import "./SingleProduct.css";
@@ -7,7 +7,9 @@ import "./SingleProduct.css";
 const SingleProduct = () => {
   const { productid } = useParams();
   const { products } = useProductContext();
-  const {setCartProducts} = useCartContext();
+  const {setCartProducts, addToCart} = useCartContext();
+  const navigate = useNavigate();
+  const token = localStorage.getItem("token")
 
   const singleProduct = products.find((item) => item._id === productid);
 
@@ -55,7 +57,7 @@ const SingleProduct = () => {
             </p>
           </div>
           <button onClick={() =>
-                setCartProducts({ type: "ADD_TO_CART", payload: singleProduct })
+               token ? addToCart(singleProduct): navigate("/login")
               } className="btn cart-btn">
             Buy now for ₹{singleProduct.price}
           </button>
